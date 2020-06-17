@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <meta name="author" content="ЧП Джас">
+  <meta name="yandex-verification" content="c80fe663dbd633e4" />
+<title></title>
+  {% load static %}
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static "icons/apple-icon-57x57.png" %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static "icons/apple-icon-60x60.png" %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static "icons/apple-icon-72x72.png" %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "icons/apple-icon-76x76.png" %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static "icons/apple-icon-114x114.png" %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static "icons/apple-icon-120x120.png" %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static "icons/apple-icon-144x144.png" %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static "icons/apple-icon-152x152.png" %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "icons/apple-icon-180x180.png" %}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{% static "icons/android-icon-192x192.png" %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static "icons/favicon-32x32.png" %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static "icons/favicon-96x96.png" %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static "icons/favicon-16x16.png" %}">
+  <link rel="manifest" href="{% static "icons/manifest.json" %}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{% static "icons/ms-icon-144x144.png" %}">
+</head>
+
+<body>
+  <style type="text/css">
+
+    #hellopreloader_preload {
+      display: block;
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* min-width: 1000px; */
+      background: rgba(56, 56, 68, 1) url(http://hello-site.ru//main/images/preloads/spinning-circles.svg) center center no-repeat;
+      background-size: 41px;
+    }
+  </style>
+  <div id="hellopreloader">
+    <div id="hellopreloader_preload"></div>
+  </div>
+  <noscript>ЧП Джас - тротуарная плитка, бордюр, еврозабор, облицовочный блок, гранитные памятники, купить в Запорожье<br />You need to enable JavaScript to run this app.</noscript>
+  <script
+    type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload"); function fadeOutnojquery(el) { el.style.opacity = 1; var interhellopreloader = setInterval(function () { el.style.opacity = el.style.opacity - 0.05; if (el.style.opacity <= 0.05) { clearInterval(interhellopreloader); hellopreloader.style.display = "none"; } }, 16); } window.onload = function () { setTimeout(function () { fadeOutnojquery(hellopreloader); }, 200); };</script>
+
+  <div id="root">Hello</div>
+  {% comment %} <script src="{% static "frontend/main-main.js" %}?v=5"></script> {% endcomment %}
+</body>
+
+</html>

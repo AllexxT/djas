@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{119:function(e,c,a){"use strict";a.r(c);var n=a(25),t=a.n(n),o=a(0),b=a.n(o),i=a(40);c.default=function(){return b.a.createElement(i.a,t()({page:"brick"},{categories:["facblock","baseblock","buildblock","facbrick"],textOfPage:""}))}}}]);

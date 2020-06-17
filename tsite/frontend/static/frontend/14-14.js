@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{121:function(e,a,t){"use strict";t.r(a);var n=t(25),p=t.n(n),r=t(0),c=t.n(r),o=t(40);a.default=function(){return c.a.createElement(o.a,p()({page:"parapet"},{categories:["cap","parapet"],textOfPage:""}))}}}]);
