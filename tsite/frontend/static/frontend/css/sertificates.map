@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "sertificates.css",
+	"sources": [
+		"../scss/sertificates.scss"
+	],
+	"sourcesContent": [
+		".wrapper {\n    display: flex;\n    flex: 1 1 auto;\n    flex-direction: column;\n    padding: 0 5pt;\n}\n.sertificates {\n    display: flex;\n    flex-flow: column;\n}\n.sertificates__container {\n    display: flex;\n    flex-flow: column;\n    width: fit-content;\n    flex-wrap: wrap;\n    margin: 15px;\n    a {\n      font-size: 16px;\n      font-weight: bold;\n      text-decoration: underline;\n      color: #0000FF;\n      transition: all 0.1s linear;\n      &:hover {\n        color: #e8b718;\n      }\n    }\n}\n// .sertificates__item {\n// }"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,QAAQ,CAAC;EACL,OAAO,EAAE,IAAI;EACb,IAAI,EAAE,QAAQ;EACd,cAAc,EAAE,MAAM;EACtB,OAAO,EAAE,KAAK;CACjB;;;AACD,AAAA,aAAa,CAAC;EACV,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;CACpB;;;AACD,AAAA,wBAAwB,CAAC;EACrB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;EACjB,KAAK,EAAE,WAAW;EAClB,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI;CAWf;;;AAhBD,AAMI,wBANoB,CAMpB,CAAC,CAAC;EACA,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,eAAe,EAAE,SAAS;EAC1B,KAAK,EAAE,OAAO;EACd,UAAU,EAAE,eAAe;CAI5B;;;AAfL,AAYM,wBAZkB,CAMpB,CAAC,AAME,MAAM,CAAC;EACN,KAAK,EAAE,OAAO;CACf"
+}

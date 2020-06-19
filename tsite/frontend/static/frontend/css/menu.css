@@ -1,0 +1,138 @@
+/* line 1, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+aside.menu {
+  padding: 15px 0 0 0;
+  flex-basis: 540px;
+  max-width: 150px;
+}
+
+@media (max-width: 900px) {
+  /* line 1, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+  aside.menu {
+    display: none;
+  }
+}
+
+/* line 10, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation {
+  height: 100%;
+}
+
+/* line 13, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation-link {
+  position: relative;
+  display: block;
+  margin: 0 5px 0 0;
+  background: #343339;
+  border-bottom: 1px solid rgba(30, 29, 28, 0.3);
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 20, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation-link a {
+  position: relative;
+  color: #e4ddd9;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 10.5px 0 9px 10px;
+}
+
+/* line 30, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu {
+  position: relative;
+}
+
+/* line 32, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu a {
+  padding: 5pt 10pt 5pt 5pt;
+  flex: 1 0 100%;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+/* line 38, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu li {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 42, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu a:hover + span + ul {
+  display: block;
+}
+
+/* line 45, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu a:hover + span {
+  background: #d3a52e;
+}
+
+/* line 50, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.submenu__links {
+  position: relative;
+  display: block;
+  margin: 0 5px 0 0;
+  background: #525252;
+  border-bottom: 1px solid rgba(30, 29, 28, 0.3);
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 58, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.submenu__links a {
+  position: relative;
+  color: #e4ddd9;
+  font-weight: bold;
+  display: block;
+  padding: 5pt 0 5pt 7pt;
+}
+
+/* line 67, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.submenu-icon {
+  display: inline-block;
+  align-self: stretch;
+  flex: 0 0 5pt;
+  order: -1;
+}
+
+/* line 74, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-menu {
+  position: absolute;
+  background: #919191;
+  top: -5px;
+  left: 95%;
+  display: none;
+  z-index: 10;
+  padding: 5px;
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 83, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-menu:hover {
+  display: block;
+}
+
+/* line 88, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link {
+  border-bottom: 1px solid rgba(63, 63, 63, 0.4);
+}
+
+/* line 90, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link:last-child {
+  border: none;
+}
+
+/* line 91, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+}
+
+/* line 94, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link a {
+  color: black;
+}
+
+/* line 97, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link a:hover {
+  color: black;
+}
+
+/*# sourceMappingURL=menu.css.map */

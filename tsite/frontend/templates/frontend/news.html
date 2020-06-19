@@ -1,0 +1,36 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/news.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+<div class="wrapper">
+    <h1 class="page-title">Новости и новинки</h1>
+    <div class="news">
+        {% for newsItem in news %}
+        <div class="news-item">
+            <div class="news-item__row">
+                <div class="card"><img src="{{ newsItem.product.photos.0.photo.crop.300x300 }}" alt=""></div>
+                <div class="news-item__content">
+                    <div class="news-item__title">{{ newsItem.title }}</div>
+                    <time class="news-item__time">{{ newsItem.changed }}</time>
+                    <div class="news-item__body">{{ newsItem.body }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
+{% include 'frontend/includes/pageDescription.html' %}
+
+{% endblock content %}

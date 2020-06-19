@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* line 3, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer {
+  background-color: #383844;
+  box-shadow: 0px -5px 10px gray;
+  margin-top: 25px;
+}
+
+/* line 7, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container {
+  display: flex;
+  flex-flow: column;
+  max-width: 1310px;
+  margin: 0 auto;
+}
+
+/* line 12, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row {
+  display: flex;
+  min-height: 90px;
+  /* justify-content: space-around; */
+  align-items: flex-start;
+  margin: 35pt 0 0 0;
+}
+
+/* line 18, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row a:link:hover {
+  color: #f8ca59;
+}
+
+@media (max-width: 800px) {
+  /* line 12, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row {
+    flex-flow: column-reverse;
+  }
+}
+
+/* line 24, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__map {
+  position: relative;
+  flex: 0 0 60%;
+  height: 300px;
+  /* img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                } */
+}
+
+/* line 28, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  /* line 24, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row .footer__map {
+    width: 100%;
+  }
+}
+
+/* line 41, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+@media (max-width: 340px) {
+  /* line 41, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row .footer__text-row {
+    flex-flow: column;
+    margin-left: 15px;
+  }
+}
+
+/* line 52, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu {
+  display: flex;
+  flex-flow: column;
+  margin: 0 0 15pt 0;
+}
+
+/* line 56, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu nav {
+  display: flex;
+  flex-flow: column;
+}
+
+/* line 60, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu a {
+  color: white;
+  font-size: 12.5pt;
+  letter-spacing: 0.3px;
+  line-height: 20pt;
+}
+
+/* line 65, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu a:after {
+  content: " »";
+}
+
+/* line 68, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu a:hover {
+  color: #f8ca59;
+}
+
+/* line 73, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer-title {
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 0 0 2pt 0;
+  color: #f8ca59;
+}
+
+/* line 79, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row address {
+  color: whitesmoke;
+  font-size: 12.5pt;
+  letter-spacing: 0.3px;
+}
+
+/* line 83, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row address a {
+  color: whitesmoke;
+  text-decoration: underline;
+}
+
+@media (min-width: 550px) and (max-width: 800px) {
+  /* line 79, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row .footer__text-row address {
+    display: flex;
+    justify-content: space-around;
+    flex: 0 1 66%;
+  }
+}
+
+/* line 93, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row address .footer__contacts {
+  display: flex;
+  flex-flow: column;
+  line-height: 20pt;
+  margin: 0 0 15pt 3pt;
+}
+
+/* line 102, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .copyright {
+  color: #ccc;
+  display: flex;
+  align-self: center;
+  padding: 12px 0 15px 0;
+  font-size: 10pt;
+}
+
+/*# sourceMappingURL=footer.css.map */

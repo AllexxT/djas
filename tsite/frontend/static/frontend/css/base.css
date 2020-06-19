@@ -1,0 +1,640 @@
+@charset "UTF-8";
+/*Обнуление*/
+/* line 3, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* line 8, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+:focus, :active {
+  outline: none;
+}
+
+/* line 14, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+a:focus, a:active {
+  outline: none;
+}
+
+/* line 16, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+nav, footer, header, aside {
+  display: block;
+}
+
+/* line 18, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 28, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+input, button, textarea {
+  font-family: inherit;
+}
+
+/* line 30, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+input::-ms-clear {
+  display: none;
+}
+
+/* line 31, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+button {
+  cursor: pointer;
+}
+
+/* line 32, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 33, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+a, a:visited {
+  text-decoration: none;
+}
+
+/* line 34, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 35, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+ul li {
+  list-style: none;
+}
+
+/* line 36, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+img {
+  vertical-align: top;
+}
+
+/* line 38, ../djas/tsite/frontend/static/frontend/scss/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* line 4, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.container {
+  max-width: 1310px;
+  margin: 0px auto;
+}
+
+/* line 8, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.burger-menu {
+  position: absolute;
+}
+
+/* line 11, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company {
+  display: flex;
+  justify-content: space-around;
+  padding: 3px 0 0 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 460px) {
+  /* line 11, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+  .company {
+    flex-flow: column;
+    align-items: center;
+  }
+}
+
+/* line 20, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__logo {
+  position: relative;
+  top: 5pt;
+  padding-left: 35pt;
+}
+
+@media (max-width: 460px) {
+  /* line 20, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+  .company .company__logo {
+    padding: 0 0 10px 0;
+  }
+}
+
+/* line 27, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__logo a {
+  font-weight: bold;
+  font-size: 28pt;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: whitesmoke;
+}
+
+/* line 32, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__logo a span {
+  color: #f5cb55;
+}
+
+/* line 37, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+@media (max-width: 688px) {
+  /* line 37, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+  .company .company__address {
+    order: 1;
+  }
+}
+
+/* line 45, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__address img {
+  max-width: 25pt;
+}
+
+/* line 49, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__location {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #efede3;
+  text-align: center;
+}
+
+/* line 56, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__numbers {
+  display: flex;
+}
+
+/* line 58, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__numbers .company__phone {
+  align-self: center;
+  margin: 0 0 0 0;
+}
+
+/* line 61, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__numbers .company__phone img {
+  width: 45pt;
+}
+
+/* line 66, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits {
+  align-self: center;
+  display: flex;
+  flex-flow: column;
+  height: 73%;
+  justify-content: space-around;
+}
+
+/* line 72, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits li {
+  height: 100%;
+  display: flex;
+}
+
+/* line 76, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 11.5pt;
+  height: 100%;
+  display: flex;
+}
+
+/* line 83, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits li:first-child a {
+  position: relative;
+  align-items: center;
+}
+
+/* line 87, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits li:last-child a {
+  padding-top: 3px;
+}
+
+/* line 90, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits .company__viber {
+  width: 50px;
+  height: 34px;
+}
+
+/* line 93, ../djas/tsite/frontend/static/frontend/scss/header.scss */
+.company .company__digits .company__viber img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* line 2, ../djas/tsite/frontend/static/frontend/scss/body.scss */
+.main-row {
+  display: flex;
+}
+
+/* line 5, ../djas/tsite/frontend/static/frontend/scss/body.scss */
+.content {
+  flex-grow: 1;
+  margin-top: 15px;
+  max-width: 1420px;
+  /* Должно помочь с сжиманием меню контентной частью страницы fence*/
+}
+
+/* line 3, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer {
+  background-color: #383844;
+  box-shadow: 0px -5px 10px gray;
+  margin-top: 25px;
+}
+
+/* line 7, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container {
+  display: flex;
+  flex-flow: column;
+  max-width: 1310px;
+  margin: 0 auto;
+}
+
+/* line 12, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row {
+  display: flex;
+  min-height: 90px;
+  /* justify-content: space-around; */
+  align-items: flex-start;
+  margin: 35pt 0 0 0;
+}
+
+/* line 18, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row a:link:hover {
+  color: #f8ca59;
+}
+
+@media (max-width: 800px) {
+  /* line 12, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row {
+    flex-flow: column-reverse;
+  }
+}
+
+/* line 24, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__map {
+  position: relative;
+  flex: 0 0 60%;
+  height: 300px;
+  /* img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                } */
+}
+
+/* line 28, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  /* line 24, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row .footer__map {
+    width: 100%;
+  }
+}
+
+/* line 41, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+@media (max-width: 340px) {
+  /* line 41, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row .footer__text-row {
+    flex-flow: column;
+    margin-left: 15px;
+  }
+}
+
+/* line 52, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu {
+  display: flex;
+  flex-flow: column;
+  margin: 0 0 15pt 0;
+}
+
+/* line 56, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu nav {
+  display: flex;
+  flex-flow: column;
+}
+
+/* line 60, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu a {
+  color: white;
+  font-size: 12.5pt;
+  letter-spacing: 0.3px;
+  line-height: 20pt;
+}
+
+/* line 65, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu a:after {
+  content: " »";
+}
+
+/* line 68, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer__menu a:hover {
+  color: #f8ca59;
+}
+
+/* line 73, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row .footer-title {
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 0 0 2pt 0;
+  color: #f8ca59;
+}
+
+/* line 79, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row address {
+  color: whitesmoke;
+  font-size: 12.5pt;
+  letter-spacing: 0.3px;
+}
+
+/* line 83, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row address a {
+  color: whitesmoke;
+  text-decoration: underline;
+}
+
+@media (min-width: 550px) and (max-width: 800px) {
+  /* line 79, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+  footer .footer-container .footer__row .footer__text-row address {
+    display: flex;
+    justify-content: space-around;
+    flex: 0 1 66%;
+  }
+}
+
+/* line 93, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .footer__row .footer__text-row address .footer__contacts {
+  display: flex;
+  flex-flow: column;
+  line-height: 20pt;
+  margin: 0 0 15pt 3pt;
+}
+
+/* line 102, ../djas/tsite/frontend/static/frontend/scss/footer.scss */
+footer .footer-container .copyright {
+  color: #ccc;
+  display: flex;
+  align-self: center;
+  padding: 12px 0 15px 0;
+  font-size: 10pt;
+}
+
+/* line 1, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+aside.menu {
+  padding: 15px 0 0 0;
+  flex-basis: 540px;
+  max-width: 150px;
+}
+
+@media (max-width: 900px) {
+  /* line 1, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+  aside.menu {
+    display: none;
+  }
+}
+
+/* line 10, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation {
+  height: 100%;
+}
+
+/* line 13, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation-link {
+  position: relative;
+  display: block;
+  margin: 0 5px 0 0;
+  background: #343339;
+  border-bottom: 1px solid rgba(30, 29, 28, 0.3);
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 20, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation-link a {
+  position: relative;
+  color: #e4ddd9;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 10.5px 0 9px 10px;
+}
+
+/* line 30, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu {
+  position: relative;
+}
+
+/* line 32, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu a {
+  padding: 5pt 10pt 5pt 5pt;
+  flex: 1 0 100%;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+/* line 38, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu li {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 42, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu a:hover + span + ul {
+  display: block;
+}
+
+/* line 45, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.navigation__submenu a:hover + span {
+  background: #d3a52e;
+}
+
+/* line 50, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.submenu__links {
+  position: relative;
+  display: block;
+  margin: 0 5px 0 0;
+  background: #525252;
+  border-bottom: 1px solid rgba(30, 29, 28, 0.3);
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 58, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.submenu__links a {
+  position: relative;
+  color: #e4ddd9;
+  font-weight: bold;
+  display: block;
+  padding: 5pt 0 5pt 7pt;
+}
+
+/* line 67, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.submenu-icon {
+  display: inline-block;
+  align-self: stretch;
+  flex: 0 0 5pt;
+  order: -1;
+}
+
+/* line 74, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-menu {
+  position: absolute;
+  background: #919191;
+  top: -5px;
+  left: 95%;
+  display: none;
+  z-index: 10;
+  padding: 5px;
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 83, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-menu:hover {
+  display: block;
+}
+
+/* line 88, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link {
+  border-bottom: 1px solid rgba(63, 63, 63, 0.4);
+}
+
+/* line 90, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link:last-child {
+  border: none;
+}
+
+/* line 91, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+}
+
+/* line 94, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link a {
+  color: black;
+}
+
+/* line 97, ../djas/tsite/frontend/static/frontend/scss/menu.scss */
+.popup-link a:hover {
+  color: black;
+}
+
+/* line 9, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* line 13, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ded9d9;
+  display: flex;
+  flex-flow: column;
+}
+
+/* line 19, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+header {
+  background-color: rgba(56, 56, 68, 0.9);
+  box-shadow: 0px 5px 10px gray;
+}
+
+/* line 23, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+.navigation-block {
+  flex: 1 1 75vh;
+  /* 100vh alternative for fix android chrome bug  */
+}
+
+/* line 27, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+.content {
+  flex-grow: 1;
+  max-width: 1420px;
+}
+
+/* line 31, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+.page-title {
+  position: relative;
+  margin: 10px 0 20px 0;
+  padding: 0 0 20px;
+  position: relative;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 100%;
+  color: #333;
+}
+
+/* line 41, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+.page-title:before {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 10px;
+  display: block;
+  bottom: 0;
+  left: 0;
+  background-color: #f3cb55;
+}
+
+/* line 52, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+section.description {
+  background-color: whitesmoke;
+  margin: 20px 10px 10px 10px;
+  border-left: 5px solid #f3cb55;
+  border-top: 5px solid #f3cb55;
+  border-bottom: 5px solid #535252;
+  border-right: 5px solid #535252;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  box-shadow: 0px 5px 10px grey;
+}
+
+@media (max-width: 570px) {
+  /* line 52, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+  section.description {
+    max-height: 250px;
+    overflow: scroll;
+  }
+}
+
+/* line 67, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+section.description h1 {
+  padding-bottom: 15px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 71, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+section.description ul li {
+  list-style: inside;
+  font-weight: bold;
+}
+
+/* line 75, ../djas/tsite/frontend/static/frontend/scss/base.scss */
+section.description ul {
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=base.css.map */

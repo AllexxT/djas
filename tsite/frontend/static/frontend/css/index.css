@@ -1,0 +1,83 @@
+/* line 1, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.title {
+  text-align: center;
+  font-size: 28px;
+}
+
+/* line 5, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  /* max-width: 1060px; */
+  justify-content: center;
+  padding: 15pt 0 15pt 0;
+}
+
+/* line 12, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories__item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: 0 7pt 15pt 7pt;
+  flex: 1 1 300px;
+  height: 250px;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px gray;
+  transition: all 0.3s ease-out;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* line 26, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories__item:hover {
+  box-shadow: none;
+}
+
+/* line 28, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories__item:hover p {
+  margin: 2pt 0 2pt 0;
+}
+
+/* line 32, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* line 37, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories__item p {
+  color: black;
+  font-weight: bold;
+  font-size: 14pt;
+  opacity: 0.8;
+  transition: all 0.3s;
+  margin: 3pt 0 3pt 0;
+}
+
+/* line 46, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+.categories__label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  bottom: 5%;
+  background: #f5cb55;
+  width: 100%;
+  border-radius: 5px;
+  border-top: 1px solid #d2caca;
+  border-bottom: 1px solid #d2caca;
+  /* backdrop-filter: blur(2px); */
+}
+
+@media (max-width: 330px) {
+  /* line 46, ../djas/tsite/frontend/static/frontend/scss/index.scss */
+  .categories__label {
+    position: relative;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

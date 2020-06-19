@@ -13,6 +13,6 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if url not match any previous, user goes to 'frontend.urls'
-urlpatterns += [
-    re_path(r'^(?:.*)/?', include('frontend.urls'))
-]
+# urlpatterns += [
+#     re_path(r'^(?:.*)/?', include('frontend.urls'))
+# ]

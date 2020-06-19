@@ -46,7 +46,6 @@ pep8 = "==1.7.1"
 pexpect = "==4.8.0"
 pickleshare = "==0.7.5"
 Pillow = "==7.0.0"
-pkg-resources = "==0.0.0"
 prometheus-client = "==0.8.0"
 prompt-toolkit = "==3.0.5"
 ptyprocess = "==0.6.0"
@@ -73,8 +72,10 @@ wcwidth = "==0.2.4"
 webencodings = "==0.5.1"
 widgetsnbextension = "==3.5.1"
 zipp = "==3.1.0"
+django-livereload-server = "*"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
 python_version = "3.7"

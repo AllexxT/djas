@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{120:function(e,a,n){"use strict";n.r(a);var t=n(25),c=n.n(t),o=n(0),p=n.n(o),r=n(40);a.default=function(){return p.a.createElement(r.a,c()({page:"monuments"},{categories:["granite","capital","coverplate","nameplate"],textOfPage:""}))}}}]);

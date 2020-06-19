@@ -11,7 +11,6 @@ const PageWrapper = styled.div`
 `;
 const N_Box = styled.div`
   display: flex;
-  /* z-index:-50; */
   flex-wrap: wrap;
   @media (max-width: 950px) {
     flex-direction: column;

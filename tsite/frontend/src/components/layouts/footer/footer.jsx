@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { default as S } from "./footerStyles";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Map from './Map'
-
+import Map from "./Map";
 
 // const ldng = () => <div>loading</div>
 
@@ -12,7 +11,6 @@ import Map from './Map'
 // const Map = loadableVisibility(() => import("./Map"), {
 //   fallback: <ldng />
 // });
-
 
 const Footer = () => {
   const [visible, setVisible] = useState(false);
@@ -31,9 +29,7 @@ const Footer = () => {
             onEnter={() => setVisible(true)}
             onExit={() => setVisible(false)}
           > */}
-          {visible && (
-            <Map />
-          )}
+          {visible && <Map />}
           {/* </ScrollTrigger> */}
           {/* <a
             href="https://www.google.com/maps/place/%D0%A7%D0%9F+%D0%94%D0%B6%D0%B0%D1%81+%D1%82%D1%80%D0%BE%D1%82%D1%83%D0%B0%D1%80%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BB%D0%B8%D1%82%D0%BA%D0%B0+%D0%B2+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BE%D0%B6%D1%8C%D0%B5/@47.822872,35.284304,16z/data=!4m5!3m4!1s0x0:0x692a9f0aff452ff6!8m2!3d47.8228715!4d35.2843036?hl=ru"
@@ -48,11 +44,6 @@ const Footer = () => {
             <nav>
               <Link to="/">Товары</Link>
               <Link to="/news">Новости</Link>
-              {/* <Link to="">Тротуарная плитка</Link>
-            <Link to="">Еврозабор</Link>
-            <Link to="">Блок и Кирпич</Link>
-            <Link to="">Крышки Парапеты</Link>
-          <Link to="">Памятники</Link> */}
               <Link to="/sertificates">Сертификаты</Link>
               <Link to="/services">Услуги</Link>
               <Link to="/exposition">Наши работы</Link>

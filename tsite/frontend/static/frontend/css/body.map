@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "body.css",
+	"sources": [
+		"../scss/body.scss"
+	],
+	"sourcesContent": [
+		"// BODY\n.main-row {\n    display: flex;\n}\n.content {\n    flex-grow: 1;\n    margin-top: 15px;\n    max-width: 1420px; /* Должно помочь с сжиманием меню контентной частью страницы fence*/\n}\n"
+	],
+	"names": [],
+	"mappings": ";;AACA,AAAA,SAAS,CAAC;EACN,OAAO,EAAE,IAAI;CAChB;;;AACD,AAAA,QAAQ,CAAC;EACL,SAAS,EAAE,CAAC;EACZ,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,MAAM;EAAE,oEAAoE;CAC1F"
+}

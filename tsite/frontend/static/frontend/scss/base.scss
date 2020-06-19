@@ -1,0 +1,78 @@
+@import "./_reset.scss";
+@import "./header.scss";
+@import "./body.scss";
+@import "./footer.scss";
+@import "./menu.scss";
+
+$base-container: 1310px;
+
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ded9d9;
+    display: flex;
+    flex-flow: column;
+}
+header {
+    background-color: rgba(56, 56, 68, 0.9);
+    box-shadow: 0px 5px 10px gray;
+}
+.navigation-block {
+    flex: 1 1 75vh; /* 100vh alternative for fix android chrome bug  */
+}
+
+.content {
+    flex-grow: 1;
+    max-width: 1420px;
+}
+.page-title {
+    position: relative;
+    margin: 10px 0 20px 0;
+    padding: 0 0 20px;
+    position: relative;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 100%;
+    color: #333;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 75px;
+        height: 10px;
+        display: block;
+        bottom: 0;
+        left: 0;
+        background-color: #f3cb55;
+    }
+}
+section.description {
+    background-color: whitesmoke;
+    margin: 20px 10px 10px 10px;
+    border-left: 5px solid #f3cb55;
+    border-top: 5px solid #f3cb55;
+    border-bottom: 5px solid #535252;
+    border-right: 5px solid #535252;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    box-shadow: 0px 5px 10px grey;
+    @media (max-width: 570px) {
+        max-height: 250px;
+        overflow: scroll;
+    }
+    h1 {
+        padding-bottom: 15px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    & ul li {
+        list-style: inside;
+        font-weight: bold;
+    }
+    ul {
+        margin-bottom: 10px;
+    }
+}

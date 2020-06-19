@@ -1,0 +1,25 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} Head {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/sertificates.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} body {% endcomment %}
+{% block content %}
+<div class="wrapper">
+    <h1 class="page-title">Сертификаты
+</div>
+<div class="sertificates">
+    {% for sert in sertificates %}
+    <div class="sertificates__container"><a href="/media/{{ sert.docFile }}" class="sertificates__item">{{ sert.name }}</a></div>
+    {% endfor %}
+</div>
+</div>
+{% include 'frontend/includes/pageDescription.html' %}
+{% endblock content %}
