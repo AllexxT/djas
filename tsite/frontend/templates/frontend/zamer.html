@@ -1,0 +1,43 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/zamer.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+<div class="wrapper">
+    <div class="zamer">
+        <div class="zamer__icon"><img src="{% static 'images/placeholder.jpeg' %}"
+                alt="Замер для расчёта материалов и работ по укладке тротуарной плитки, установке еврозаборов и памятников">
+        </div>
+        <div class="zamer__description">
+            <h1>
+                Замер на территории планируемой под работы по укладке тротуарной
+                плитки
+            </h1>
+            <p>
+                Производятся опытными замерщиками ЧП Джас. Замеры обязательны для того, что бы рассчитать необходимое
+                количество тротуарной плитки и сопутствующих материалов.
+            </p>
+            <p>
+                Точные замеры позволяют расчитать количество требуемой тротуарной
+                плитки и основных сопутствующих материалов, таких как геотекстиль,
+                цемент, отсев, бордюр и отливы. У Вас не будут накапливаться
+                оставшиеся строительные материалы, тем самым Вы значительно
+                сэкономите на расходах.
+            </p>
+        </div>
+    </div>
+    {% include 'frontend/includes/services-info.html' %}
+</div>
+{% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
+{% include 'frontend/includes/pageDescription.html' %}
+
+{% endblock content %}

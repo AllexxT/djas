@@ -1,0 +1,115 @@
+/* line 1, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+/* line 6, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: flex-end; */
+}
+
+@media (max-width: 800px) {
+  /* line 6, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+  .services {
+    justify-content: center;
+  }
+}
+
+/* line 14, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 1 25%;
+  padding: 0 15px 15px 15px;
+}
+
+@media (max-width: 800px) {
+  /* line 14, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+  .services__item {
+    flex: 0 0 50%;
+    padding: 0 7px 7px 7px;
+  }
+}
+
+@media (max-width: 450px) {
+  /* line 14, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+  .services__item {
+    flex: 1 1 40%;
+    padding: 0 7px 7px 7px;
+  }
+}
+
+/* line 28, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__item:nth-child(3) img {
+  width: 75%;
+}
+
+@media (max-width: 390px) {
+  /* line 32, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+  .services__item:nth-child(3) img {
+    width: 100%;
+    border: 1px solid red;
+  }
+}
+
+/* line 38, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__image-block {
+  text-align: center;
+}
+
+/* line 40, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__image-block a {
+  display: inline-block;
+  /* height: 100%;
+        width: 100%; */
+  max-height: 190px;
+  overflow: hidden;
+}
+
+/* line 46, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__image-block a img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* line 53, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__button-block {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto 20px auto;
+}
+
+/* line 57, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__button-block a {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #383844;
+  padding: 0 10px;
+  font-weight: bold;
+  color: #333333;
+  transition: all 0.2s linear;
+}
+
+/* line 65, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__button-block a span {
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+/* line 70, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__button-block a:hover {
+  background: #383844;
+}
+
+/* line 72, ../djas/tsite/frontend/static/frontend/scss/services.scss */
+.services__button-block a:hover span {
+  color: #f5cb55;
+}
+
+/*# sourceMappingURL=services.css.map */

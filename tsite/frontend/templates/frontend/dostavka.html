@@ -1,0 +1,59 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/dostavka.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+<div class="wrapper">
+    <h1 class="page-title">Доставка тротуарной плитки в Запорожье и Запорожской области манипулятором</h1>
+    <div class="dostavka">
+        <p>
+            Благодаря наличию манипуляторов грузоподъемностью от 5 до 30 тонн,
+            мы с радостью доставим необходимое для Вас количество
+            <b>тротуарной плитки</b>,<b> бордюров</b>,
+            <b>строительных блоков</b> и тд. в любую точку Запорожья,
+            Запорожской области (Бердянск, Мелитополь, Энергодар, Вольнянск,
+            Орехов, Кирилловка, Васильевка, Пологи, Днепрорудное, Гуляйполе) а
+            так же ближайших областей (Днепропетровская, Донецкая, Херсонская,
+            Луганская)
+        </p>
+    </div>
+    <div class="manipulators">
+        <div class="manipulators__item">
+            <div class="manipulators__photo"><img src="{% static 'images/placeholder.jpeg' %}" alt="Манипулятор пять тонн"></div>
+            <div class="manipulators__label">
+                <h4>Манипулятор 5 т</h4>
+                <p>Доставка</p>
+            </div>
+        </div>
+        <div class="manipulators__item">
+            <div class="manipulators__photo"><img
+                    src="{% static 'images/dostavka-manipulyator-zaporozhe-s-nds-chp-dzhas.jpg' %}" alt="Манипулятор 15 тонн"></div>
+            <div class="manipulators__label">
+                <h4>Манипулятор 15 т</h4>
+                <p>Доставка</p>
+            </div>
+        </div>
+        <div class="manipulators__item">
+            <div class="manipulators__photo"><img src="{% static 'images/placeholder.jpeg' %}" alt="Манипулятор 25 тонн"></div>
+            <div class="manipulators__label">
+                <h4>Манипулятор 25 т</h4>
+                <p>Доставка</p>
+            </div>
+        </div>
+    </div>
+    {% include 'frontend/includes/services-info.html' %}
+    <div class="buy"><a href="">КУПИТЬ ТРОТУАРНУЮ ПЛИТКУ В ЗАПОРОЖЬЕ    </a></div>
+</div>
+{% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
+{% include 'frontend/includes/pageDescription.html' %}
+
+{% endblock content %}

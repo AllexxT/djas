@@ -1,0 +1,124 @@
+/* line 1, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 0 5px;
+}
+
+/* line 6, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.wrapper h1 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+/* line 13, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.zamer {
+  /* display: flex; */
+}
+
+@media (max-width: 600px) {
+  /* line 13, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+  .zamer {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+/* line 20, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.zamer__icon {
+  display: flex;
+  flex: 1 0 200px;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  /* line 20, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+  .zamer__icon {
+    width: fit-content;
+    align-self: center;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 601px) {
+  /* line 20, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+  .zamer__icon {
+    float: left;
+  }
+  /* line 33, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+  .zamer__icon img {
+    padding-right: 15px;
+  }
+}
+
+/* line 37, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.zamer__icon img {
+  width: 100%;
+  object-fit: contain;
+  transform: scale(1.025);
+}
+
+/* line 43, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.zamer__description {
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+/* line 46, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.zamer__description p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* line 51, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.info {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ebd4a1;
+  min-height: 75px;
+  align-items: center;
+  line-height: 1.3;
+  margin-top: 20px;
+}
+
+@media (max-width: 577px) {
+  /* line 51, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+  .info {
+    flex-flow: column;
+    padding: 10px;
+  }
+}
+
+/* line 65, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.info__text {
+  text-align: center;
+}
+
+/* line 67, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.info__text span {
+  font-size: 25px;
+  font-weight: bold;
+  color: #373333;
+}
+
+@media (max-width: 755px) {
+  /* line 73, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+  .info__numbers {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+/* line 78, ../djas/tsite/frontend/static/frontend/scss/zamer.scss */
+.info__numbers a {
+  font-size: 18px;
+  color: #446084;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=zamer.css.map */
