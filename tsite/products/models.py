@@ -250,6 +250,8 @@ class ExpositionPhotos(models.Model):
 
 class ServicePage(models.Model):
     page = models.CharField(max_length=350, null=True, blank=True)
+    title = models.CharField(
+        'Заголовок', max_length=100, null=True, blank=True)
     pageText = models.TextField(blank=True, null=True)
 
     @property

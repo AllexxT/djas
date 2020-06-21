@@ -1,38 +1,9 @@
-/* line 1, ../djas/tsite/frontend/static/frontend/scss/sertificates.scss */
-.wrapper {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 0 5pt;
-}
+.wrapper { display: flex; flex: 1 1 auto; flex-direction: column; padding: 0 5pt; }
 
-/* line 7, ../djas/tsite/frontend/static/frontend/scss/sertificates.scss */
-.sertificates {
-  display: flex;
-  flex-flow: column;
-}
+.sertificates { display: flex; flex-flow: column; }
 
-/* line 11, ../djas/tsite/frontend/static/frontend/scss/sertificates.scss */
-.sertificates__container {
-  display: flex;
-  flex-flow: column;
-  width: fit-content;
-  flex-wrap: wrap;
-  margin: 15px;
-}
+.sertificates__container { display: flex; flex-flow: column; width: fit-content; flex-wrap: wrap; margin: 15px; }
 
-/* line 17, ../djas/tsite/frontend/static/frontend/scss/sertificates.scss */
-.sertificates__container a {
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: underline;
-  color: #0000FF;
-  transition: all 0.1s linear;
-}
+.sertificates__container a { font-size: 16px; font-weight: bold; text-decoration: underline; color: #0000FF; transition: all 0.1s linear; }
 
-/* line 23, ../djas/tsite/frontend/static/frontend/scss/sertificates.scss */
-.sertificates__container a:hover {
-  color: #e8b718;
-}
-
-/*# sourceMappingURL=sertificates.css.map */
+.sertificates__container a:hover { color: #e8b718; }

@@ -1,0 +1,58 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/products.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+<section class="products">
+    <h1 class="page-title">Еврозабор и <a href="{% url 'fence' %}#columns">Бетонные Столбы</a> в Запорожье</h1>
+    {% if glossy %}
+    <article class="products__category">
+        <h2 id="glossy"><span>Глянцевый Еврозабор</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in glossy %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if ordinary %}
+    <article class="products__category">
+        <h2 id="ordinary"><span>Бетонный Еврозабор</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in ordinary %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if columns %}
+    <article class="products__category">
+        <h2 id="columns"><span>Бетонные столбы</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in columns %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+</section>
+
+{% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
+{% include 'frontend/includes/pageDescription.html' %}
+
+{% endblock content %}

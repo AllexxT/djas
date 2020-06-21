@@ -216,10 +216,12 @@ class ServicePageAdmin(admin.ModelAdmin):
     inlines = [ServicePricesAdminInline]
     fields = (
         'page',
+        'title',
         'pageText',
     )
     list_display = (
         'page',
+        'title',
         'pageText',
     )
 

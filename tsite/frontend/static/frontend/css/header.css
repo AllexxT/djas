@@ -1,148 +1,43 @@
-/* line 4, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.container {
-  max-width: 1310px;
-  margin: 0px auto;
-}
+.container { max-width: 1310px; margin: 0px auto; }
 
-/* line 8, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.burger-menu {
-  position: absolute;
-}
+.burger-menu { position: absolute; }
 
-/* line 11, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company {
-  display: flex;
-  justify-content: space-around;
-  padding: 3px 0 0 0;
-  flex-wrap: wrap;
-}
+.company { display: flex; justify-content: space-around; padding: 3px 0 0 0; flex-wrap: wrap; }
 
-@media (max-width: 460px) {
-  /* line 11, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-  .company {
-    flex-flow: column;
-    align-items: center;
-  }
-}
+@media (max-width: 460px) { .company { flex-flow: column; align-items: center; } }
 
-/* line 20, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__logo {
-  position: relative;
-  top: 5pt;
-  padding-left: 35pt;
-}
+.company .company__logo { position: relative; top: 5pt; padding-left: 35pt; }
 
-@media (max-width: 460px) {
-  /* line 20, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-  .company .company__logo {
-    padding: 0 0 10px 0;
-  }
-}
+@media (max-width: 460px) { .company .company__logo { padding: 0 0 10px 0; } }
 
-/* line 27, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__logo a {
-  font-weight: bold;
-  font-size: 28pt;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: whitesmoke;
-}
+.company .company__logo a { font-weight: bold; font-size: 28pt; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; }
 
-/* line 32, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__logo a span {
-  color: #f5cb55;
-}
+.company .company__logo a span { color: #f5cb55; }
 
-/* line 37, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__address {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 5px;
-}
+.company .company__address { display: flex; flex-direction: column; align-items: center; padding-bottom: 5px; }
 
-@media (max-width: 688px) {
-  /* line 37, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-  .company .company__address {
-    order: 1;
-  }
-}
+@media (max-width: 688px) { .company .company__address { order: 1; } }
 
-/* line 45, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__address img {
-  max-width: 25pt;
-}
+.company .company__address img { max-width: 25pt; }
 
-/* line 49, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__location {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  color: #efede3;
-  text-align: center;
-}
+.company .company__location { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; color: #efede3; text-align: center; }
 
-/* line 56, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__numbers {
-  display: flex;
-}
+.company .company__numbers { display: flex; }
 
-/* line 58, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__numbers .company__phone {
-  align-self: center;
-  margin: 0 0 0 0;
-}
+.company .company__numbers .company__phone { align-self: center; margin: 0 0 0 0; }
 
-/* line 61, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__numbers .company__phone img {
-  width: 45pt;
-}
+.company .company__numbers .company__phone img { width: 45pt; }
 
-/* line 66, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits {
-  align-self: center;
-  display: flex;
-  flex-flow: column;
-  height: 73%;
-  justify-content: space-around;
-}
+.company .company__digits { align-self: center; display: flex; flex-flow: column; height: 73%; justify-content: space-around; }
 
-/* line 72, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits li {
-  height: 100%;
-  display: flex;
-}
+.company .company__digits li { height: 100%; display: flex; }
 
-/* line 76, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits a {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: white;
-  font-size: 11.5pt;
-  height: 100%;
-  display: flex;
-}
+.company .company__digits a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: white; font-size: 11.5pt; height: 100%; display: flex; }
 
-/* line 83, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits li:first-child a {
-  position: relative;
-  align-items: center;
-}
+.company .company__digits li:first-child a { position: relative; align-items: center; }
 
-/* line 87, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits li:last-child a {
-  padding-top: 3px;
-}
+.company .company__digits li:last-child a { padding-top: 3px; }
 
-/* line 90, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits .company__viber {
-  width: 50px;
-  height: 34px;
-}
+.company .company__digits .company__viber { width: 50px; height: 34px; }
 
-/* line 93, ../djas/tsite/frontend/static/frontend/scss/header.scss */
-.company .company__digits .company__viber img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
-
-/*# sourceMappingURL=header.css.map */
+.company .company__digits .company__viber img { height: 100%; width: 100%; object-fit: contain; }

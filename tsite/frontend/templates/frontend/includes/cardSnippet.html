@@ -1,0 +1,37 @@
+{% load static %}
+
+<div class="card">
+    <div class="card__content">
+        <a class="card__image">
+            <img src="{{card.photos.0.photo.crop.300x300|default:'static/images/placeholder.jpeg'}}" alt="{{card.name}}">
+            {% if card.sertificate %}
+            <img class="card__sertificat" src="{% static 'images/sertificated-product.png' %}"
+                alt="Сертификат качества">
+            {% endif %}
+            {% if card.discount %}
+            <img class="card__discount" src="{% static 'images/skidka-chp-dzhaz.png' %}" alt="Скидка на товар">
+            {% endif %}
+
+        </a>
+    </div>
+    <div class="card__name">
+        <a href="">{{card.name}}</a>
+    </div>
+    <div class="card__old-price">
+        <span>
+            {% if card.prices.0.oldPrice != None %}
+            {{card.prices.0.oldPrice}} грн
+            {% endif %}
+        </span>
+    </div>
+    <div class="card__current-price">
+        {% if card.lowerPriceNoTable %}
+        <p>от {{card.lowerPriceNoTable|floatformat}} грн</p>
+        {% elif card.prices.0.lowerPrice %}
+        <p>от {{card.prices.0.lowerPrice|floatformat}} грн</p>
+        {% else %}
+        <span style="color: #535353;">Нет информации</span>
+        {% endif %}
+    </div>
+    <div class="card__button"><a href="">подробнее</a></div>
+</div>

@@ -1,15 +1,4 @@
 @charset "UTF-8";
-/* line 2, ../djas/tsite/frontend/static/frontend/scss/body.scss */
-.main-row {
-  display: flex;
-}
+.main-row { display: flex; }
 
-/* line 5, ../djas/tsite/frontend/static/frontend/scss/body.scss */
-.content {
-  flex-grow: 1;
-  margin-top: 15px;
-  max-width: 1420px;
-  /* Должно помочь с сжиманием меню контентной частью страницы fence*/
-}
-
-/*# sourceMappingURL=body.css.map */
+.content { flex-grow: 1; margin-top: 15px; max-width: 1420px; /* Должно помочь с сжиманием меню контентной частью страницы fence*/ }

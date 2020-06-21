@@ -1,0 +1,70 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/products.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+<section class="products">
+    <h1 class="page-title">Памятники и сопутствующие товары</h1>
+    {% if capital %}
+    <article class="products__category">
+        <h2 id="capital"><span>Бетонные памятники</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in capital %}
+                {% include 'frontend/includes/monumentsCard.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if granite %}
+    <article class="products__category">
+        <h2 id="granite"><span>Гранитные памятники</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in granite %}
+                {% include 'frontend/includes/monumentsCard.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if nameplate %}
+    <article class="products__category">
+        <h2 id="nameplate"><span>Овалы и Таблички для памятников</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in nameplate %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if coverplate %}
+    <article class="products__category">
+        <h2 id="coverplate"><span>Отмостка для памятников</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in coverplate %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+</section>
+
+{% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
+{% include 'frontend/includes/pageDescription.html' %}
+
+{% endblock content %}

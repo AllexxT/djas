@@ -21,7 +21,7 @@
                 <div class="card"><img src="{{ newsItem.product.photos.0.photo.crop.300x300 }}" alt=""></div>
                 <div class="news-item__content">
                     <div class="news-item__title">{{ newsItem.title }}</div>
-                    <time class="news-item__time">{{ newsItem.changed }}</time>
+                    <time class="news-item__time">{{ newsItem.changed|date:"d-M" }}</time>
                     <div class="news-item__body">{{ newsItem.body }}</div>
                 </div>
             </div>

@@ -4,6 +4,12 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('trotuarnaya-plitka-zaporozhe/', views.sett, name='sett'),
+    path('evrozabory-zaporozhe/', views.fence, name='fence'),
+    path('kirpich-i-blok-oblitsovochnyj-v-zaporozhe/', views.brick, name='brick'),
+    path('kryshki-i-parapety-zaporozhe/', views.parapet, name='parapet'),
+    path('pamyatniki-zaporozhe/', views.monuments, name='monuments'),
+    # !
     path('novosti/', views.news, name='news'),
     # Services
     path('nashi-uslugi/', views.uslugi, name='uslugi'),

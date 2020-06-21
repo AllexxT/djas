@@ -1,0 +1,71 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/products.css' %}">
+<meta name="description" content="{{ seo.description }}">
+<meta name="keywords" content="{{ seo.keywords }}">
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+<section class="products">
+    <h1 class="page-title">Тротуарная плитка <a href="{% url 'sett' %}#borders">Бордюр</a> и <a
+            href="{% url 'sett' %}#gully">Водосток</a></h1>
+    {% if vibropressed %}
+    <article class="products__category">
+        <h2 id="vibropressed"><span>Вибропрессованная</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in vibropressed %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if vibrocast %}
+    <article class="products__category">
+        <h2 id="vibrocast"><span>Вибролитая</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in vibrocast %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if borders %}
+    <article class="products__category">
+        <h2 id="borders"><span>Бордюр</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in borders %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+    {% if gully %}
+    <article class="products__category">
+        <h2 id="gully"><span>Водосток</span></h2>
+        <div class="products__content-wrapper">
+            <div class="products__content">
+                {% for card in gully %}
+                {% include 'frontend/includes/cardSnippet.html'%}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endif %}
+</section>
+
+{% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
+{% include 'frontend/includes/pageDescription.html' %}
+
+{% endblock content %}

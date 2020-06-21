@@ -5,13 +5,53 @@
 <title>{% block title %}{{ seo.title }}{% endblock title %}</title>
 
 {% block meta %}
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/news.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/installation.css' %}">
 <meta name="description" content="{{ seo.description }}">
 <meta name="keywords" content="{{ seo.keywords }}">
 {% endblock meta %}
 
 {% comment %} BODY {% endcomment %}
 {% block content %}
+<div class="installation-page">
+    <h1 class="page-title">{{ title }}</h1>
+    <div class="installation-description">{{description|safe}}</div>
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Наименование работ</th>
+                <th>Цена</th>
+            </tr>
+        <tbody>
+            {% for item in table %}
+            <tr>
+                <th>{{forloop.counter}}</th>
+                <td>{{item.description}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </thead>
+    </table>
+    <div class="info">
+        {% if info.page == "sett" %}
+        <div class="info__text"><span>{{info.catalog}} →</span></div>
+        <p class="info__numbers">
+            <a href="{% url 'sett' %}"><span>Подробнее</span></a>
+        </p>
+        {% elif info.page == "fence" %}
+        <div class="info__text"><span>{{info.catalog}} →</span></div>
+        <p class="info__numbers">
+            <a href="{% url 'fence' %}"><span>Подробнее</span></a>
+        </p>
+        {% elif info.page == "monuments" %}
+        <div class="info__text"><span>{{info.catalog}} →</span></div>
+        <p class="info__numbers">
+            <a href="{% url 'monuments' %}"><span>Подробнее</span></a>
+        </p>
+        {% endif %}
+    </div>
+</div>
 
 {% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
 {% include 'frontend/includes/pageDescription.html' %}

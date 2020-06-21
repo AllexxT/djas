@@ -1,0 +1,106 @@
+.installation-page {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 0px 10px 20px;
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      font-size: 16px;
+      color: #484340;
+      margin: 0 30px;
+      @media (max-width:469px){
+          margin: 0;
+      }
+    }
+    tr, td, th {
+      padding: 7px;
+    }
+    thead {
+      tr {
+        th:not(:first-child){
+          text-align: start;
+        }
+      }
+    }
+    tr {
+      border-bottom: 1px solid gray;
+      td {
+        text-align: start;
+      }
+    }
+    th {
+      font-size: 18px;
+    }
+    td {
+      text-align: center;
+    }
+}
+.page-title {
+    font-size: 28px;
+}
+.installation-description {
+    font-size: 16px;
+    padding-bottom: 20px;
+    line-height: 23px;
+    ul {
+        padding-left: 18px;
+        li {
+          list-style: circle outside;
+        }
+       }
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    background-color: #EBD4A1;
+    min-height: 75px;
+    align-items: center;
+    line-height: 1.3;
+    margin: 40px 0 20px 0;
+  
+    @media (max-width:577px){
+      flex-flow: column;
+      padding: 10px;
+    }
+}
+.info__text {
+    text-align: center;
+    span {
+      font-size: 25px;
+      font-weight: bold;
+      color: #373333;
+    }
+}
+.info__numbers {
+    @media (max-width:755px){
+        display: flex;
+        flex-flow: column;
+      }
+      a {
+          display: flex;
+          justify-content: center;
+          border: 3px solid #383844;
+          border-radius: 5px;
+          padding: 0 10px;
+          font-weight: bold;
+          color: #333333;
+          transition: all 0.2s linear;
+          span {
+              padding: 10px 0 10px 0;
+              font-size: 16px;
+          }
+      }
+      a:hover {
+          background: #383844;
+          span {
+            color: #F5CB55;
+          }
+      }
+}
