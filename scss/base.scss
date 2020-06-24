@@ -19,6 +19,7 @@ body {
 header {
     background-color: rgba(56, 56, 68, 0.9);
     box-shadow: 0px 5px 10px gray;
+    margin-bottom: 10px;
 }
 .navigation-block {
     flex: 1 1 75vh; /* 100vh alternative for fix android chrome bug  */
@@ -27,17 +28,18 @@ header {
 .content {
     flex-grow: 1;
     max-width: 1420px;
+    padding: 0 5px 0 5px;
 }
 .page-title {
     position: relative;
-    margin: 10px 0 20px 0;
+    margin: 0 0 20px 0;
     padding: 0 0 20px;
     position: relative;
     font-size: 36px;
     font-weight: 900;
     line-height: 100%;
     color: #333;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
 
     &:before {
         content: "";

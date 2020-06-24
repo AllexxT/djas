@@ -1,0 +1,199 @@
+{% extends 'frontend/layout/base.html' %}
+{% comment %} HEAD {% endcomment %}
+{% load static %}
+
+<title>{% block title %}Купить {{ product.name }} в Запорожье выгодная Цена - ЧП Джас{% endblock title %}</title>
+
+{% block meta %}
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/productPage.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/gallery.css' %}">
+<meta name="description" content="{{ product.seoDescription }}">
+<meta name="keywords" content="{{ product.keywords }}">
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+
+
+
+{% endblock meta %}
+
+{% comment %} BODY {% endcomment %}
+{% block content %}
+
+<script type="text/babel">
+    {% comment %} const Hello = () => {
+    let image = "{{product.photos.1.photo.crop.400x400}}"
+    return (
+        <img src={image} alt="" />
+    )
+} {% endcomment %}
+const { useState, Fragment } = React
+
+function GalleryApp() {
+  const [current, setCurrent] = useState(0);
+  const [fullScreen, setFullScreen] = useState(false);
+  const images = [
+      {% for img in product.photos %}
+      "{{ img.photo.crop.400x400 }}",
+      {% endfor %}
+  ];
+  const image_thumbs = [
+      {% for img in product.photos %}
+      "{{ img.photo.crop.50x50 }}",
+      {% endfor %}
+  ];
+  const image_full = [
+      {% for img in product.photos %}
+      "/media/{{ img.photo }}",
+      {% endfor %}
+  ];
+  const next = () => {
+    current !== images.length - 1 ? setCurrent(current + 1) : setCurrent(0);
+  };
+  const back = () => {
+    current === 0 ? setCurrent(images.length - 1) : setCurrent(current - 1);
+  };
+  const selectThumb = (index) => {
+    setCurrent(index);
+  };
+
+  return (
+    <Fragment>
+      {fullScreen && (
+        <div className={"full-screen"}>
+          <span onClick={() => back()}>{"<<"}</span>
+          <img className={"full-screen__image"} src={image_full[current]} alt="" />
+          <img
+            className={"full-screen__fsicon"}
+            onClick={() => setFullScreen(false)}
+            src={"{% static 'images/fullscreen.svg' %}"}
+            alt=""
+          />
+          <span onClick={() => next()}>{">>"}</span>
+        </div>
+      )}
+      <div className={"glry__wrapper"}>
+        <div className={"thumb-list"}>
+          {image_thumbs.map((thumb, index) => (
+            <div
+              className={"thumb"}
+              key={index}
+              onClick={() => selectThumb(index)}
+            >
+              <img
+                className={
+                  index === current
+                    ? "selected-image selected-image__active"
+                    : "selected-image"
+                }
+                src={thumb}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className={"glry"}>
+          <span onClick={() => back()}>{"<<"}</span>
+          <img className={"glry__main-image"} src={images[current]} alt="" />
+          <img className={"glry__fsicon"} onClick={() => setFullScreen(true)} src={"{% static 'images/fullscreen.svg' %}"} alt="" />
+          <span onClick={() => next()}>{">>"}</span>
+        </div>
+      </div>
+    </Fragment>
+  );
+}
+ReactDOM.render(
+    <GalleryApp />,
+    document.getElementById('gallery')
+);
+</script>
+
+
+<div class="pp">
+    <div class="g-row">
+        <div class="gallery">
+            <div class="gallery__frame">
+                <div class="gallery__main-frame">
+                    <div class="gallery__row">
+                        {% comment %} <img src="{{product.photos.0.photo.crop.400x400}}" alt=""> {% endcomment %}
+                        <div id="gallery"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <div class="title">
+                    <div class="title__row">
+                        <h1>{{ product.name }}</h1>
+                    </div>
+                </div>
+                <div class="sizes">{{ product.sizes }}</div>
+                {% if product.article.article == "vibropressed" %}
+                <div class="table">
+                    <div class="table__press"></div>
+                    <div class="table__content">
+                        <table>
+                            <caption>Стоимость</caption>
+                            <thead>
+                                <tr>
+                                    <th>цвет</th>
+                                    {% for d in product.prices.0.depthPrice %}
+                                    <th>{{ d.depth.size }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for price in product.prices %}
+                                <tr>
+                                    <td>{{ price.color }}</td>
+                                    {% for prs in price.depthPrice %}
+                                    <td>{{ prs.price|floatformat }}</td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% else %}
+                <div class="table2">
+                    <div class="table2__box">
+                        <div class="table2__prices-row">
+                            <div class="table2__label">
+                                <p><span>ЦВЕТ</span></p>
+                            </div>
+                            <div class="table2__label">
+                                <p><span>ЦЕНА</span></p>
+                            </div>
+                        </div>
+                        {% if product.prices|length > 0 %}
+                        {% for clr in product.prices %}
+                        <div class="table2__prices-row">
+                            <div class="table2__label">
+                                <p>{{ clr.color }}</p>
+                            </div>
+                            <div class="table2__label">
+                                <p>{{ clr.noDepthPrice }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="table2__prices-row">
+                            <div class="table2__label">
+                                <p>Серый</p>
+                            </div>
+                            <div class="table2__label">
+                                <p>Уточните по телефону</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="pp__description">{{ product.description | safe }}</div>
+</div>
+
+{% endblock content %}

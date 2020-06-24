@@ -1,0 +1,131 @@
+
+.wrapper {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+.news {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 950px) {
+        flex-direction: column;
+    }
+}
+.news-item {
+    line-height: 16pt;
+    position: relative;
+    display: flex;
+    padding: 10px;
+    max-width: 1060px;
+    flex: 0 1 50%;
+    justify-self: center;
+    min-width: 360px;
+}
+.news-item__row {
+    background-color: #f1f0ef;
+    display: flex;
+    width: 100%;
+    a {
+        position: relative;
+    }
+    @media (max-width: 420px) {
+        display: flex;
+        flex-direction: column;
+        // flex-direction: column-reverse;
+    }
+}
+
+.news-item__content {
+    display: flex;
+    flex-direction: column;
+    min-width: 1px;
+    width: 100%;
+    padding-top: 3px;
+    /* word-break: break-all;  */  /*use this*/
+    /* word-wrap: break-word; */
+    margin: 5px;
+    @media (max-width: 576px) {
+        display: inline;
+    }
+}
+.news-item__title {
+    font-size: 21px;
+    padding: 0 0 0 5pt;
+}
+.news-item__time {
+    font-size: 14px;
+    color: #474651;
+    margin: 5px 0 5px 20pt;
+}
+.news-item__body {
+    font-size: 16px;
+    padding: 0 0 0 5pt;
+    height: 100%;
+}
+
+.news-item__button {
+    display: block;
+    align-self: flex-end;
+    padding: 20px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(43, 43, 43);
+    text-align: center;
+    background: rgb(211, 165, 46);
+    transition: all 0.2s linear 0s;
+    margin: 0 auto 5px;
+    &:hover {
+        background: #fdc61d;
+        color: #2b2b2b;
+    }
+}
+.news__price {
+    font-size: 21px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #323232;
+    padding-left: 7px;
+}
+.news__product-name {
+    padding: 0 0 0 10px;
+    min-height: 46px;
+    a {
+        text-decoration: underline;
+        display: flex;
+        justify-content: flex-start;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        color: #323232;
+        transition: color 0.2s linear;
+        align-self: flex-start;
+        position: relative;
+        &:hover {
+            color: #b28c1a;
+            text-decoration: none;
+        }
+    }
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    filter: drop-shadow(0px 2px 3px gray);
+}
+
+.card__sertificat{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 35px;
+    filter: drop-shadow(3px 4px 3px gray);
+}
+.card__discount {
+    position: absolute;
+    top: -5px;
+    left: -7px;
+}

@@ -2,8 +2,12 @@
 
 <div class="card">
     <div class="card__content">
-        <a class="card__image">
-            <img src="{{card.photos.0.photo.crop.300x300|default:'static/images/placeholder.jpeg'}}" alt="{{card.name}}">
+        <a href="{{card.pk}}" class="card__image">
+            {% if card.photos.0.photo.crop.300x300 %}
+            <img src="{{card.photos.0.photo.crop.300x300}}" alt="{{card.name}}">
+            {% else %}
+            <img src="{% static 'images/placeholder.jpeg' %}" alt="{{card.name}}">
+            {% endif %}
             {% if card.sertificate %}
             <img class="card__sertificat" src="{% static 'images/sertificated-product.png' %}"
                 alt="Сертификат качества">
@@ -11,11 +15,10 @@
             {% if card.discount %}
             <img class="card__discount" src="{% static 'images/skidka-chp-dzhaz.png' %}" alt="Скидка на товар">
             {% endif %}
-
         </a>
     </div>
     <div class="card__name">
-        <a href="">{{card.name}}</a>
+        <a href="{{card.pk}}">{{card.name}}</a>
     </div>
     <div class="card__old-price">
         <span>
@@ -33,5 +36,5 @@
         <span style="color: #535353;">Нет информации</span>
         {% endif %}
     </div>
-    <div class="card__button"><a href="">подробнее</a></div>
+    <div class="card__button"><a href="{{card.pk}}">подробнее</a></div>
 </div>

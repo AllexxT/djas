@@ -1,12 +1,10 @@
 .products { display: flex; flex: 1 1 auto; flex-direction: column; position: relative; }
 
-.products h2 { align-items: center; text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px; font-size: 33px; text-align: center; margin: 20px 0 40px 0; display: flex; justify-content: center; }
+.products h2 { align-items: center; text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px; font-size: 33px; text-align: center; margin: 20px 0 20px 0; display: flex; justify-content: center; }
 
 .products h2 span { position: relative; }
 
-.products h2 span::after { content: ""; display: inline-block; width: 80%; height: 5px; background: #b8860b; position: absolute; left: 0; right: 0; bottom: -12px; margin: auto; border: 2px solid #b8860b; border-radius: 50px; }
-
-.products__category { margin-bottom: 50px; }
+.products__category { margin-bottom: 10px; }
 
 .page-title:before { left: 10px; bottom: -10px; }
 

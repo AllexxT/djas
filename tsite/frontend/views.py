@@ -125,6 +125,15 @@ def monuments(request):
     )
 
 
+def productPage(request, pk):
+    product = ProductCard.objects.get(pk=pk)
+    return render(
+        request,
+        'frontend/products/productPage.html',
+        {"product": product}
+    )
+
+
 def news(request):
     pageHead = Page.objects.get(page='novosti')
     news = News.objects.all()

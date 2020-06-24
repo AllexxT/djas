@@ -5,10 +5,19 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('trotuarnaya-plitka-zaporozhe/', views.sett, name='sett'),
+    path('trotuarnaya-plitka-zaporozhe/<str:pk>', views.productPage, name='settPage'),
+
     path('evrozabory-zaporozhe/', views.fence, name='fence'),
+    path('evrozabory-zaporozhe/<str:pk>', views.productPage, name='fencePage'),
+
     path('kirpich-i-blok-oblitsovochnyj-v-zaporozhe/', views.brick, name='brick'),
+    path('kirpich-i-blok-oblitsovochnyj-v-zaporozhe/<str:pk>', views.productPage, name='brickPage'),
+
     path('kryshki-i-parapety-zaporozhe/', views.parapet, name='parapet'),
+    path('kryshki-i-parapety-zaporozhe/<str:pk>', views.productPage, name='parapetPage'),
+
     path('pamyatniki-zaporozhe/', views.monuments, name='monuments'),
+    path('pamyatniki-zaporozhe/<str:pk>', views.productPage, name='monumentsPage'),
     # !
     path('novosti/', views.news, name='news'),
     # Services

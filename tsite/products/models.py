@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from versatileimagefield.fields import VersatileImageField, PPOIField
 from datetime import date
+from django.urls import reverse
 
 ##############################################################################
 
@@ -95,6 +96,14 @@ class ProductCard(models.Model):
         except TypeError:
             return
         return None
+
+    @property
+    def depths(self):
+        depthList = []
+        for price in self.prices:
+            for dep in price.depthPrice:
+                depthList.append(dep.depth)
+        return set(depthList)
 
     @property
     def news(self):
@@ -190,6 +199,10 @@ class News(models.Model):
     body = models.TextField(max_length=500, null=True, blank=True)
     changed = models.DateTimeField(auto_now=True, blank=True)
     created = models.DateField(auto_now_add=True, blank=True)
+
+    @property
+    def productUrl(self):
+        return reverse(self.product.article.page.page)
 
     def __str__(self):
         return self.title

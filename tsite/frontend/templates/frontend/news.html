@@ -18,11 +18,34 @@
         {% for newsItem in news %}
         <div class="news-item">
             <div class="news-item__row">
-                <div class="card"><img src="{{ newsItem.product.photos.0.photo.crop.300x300 }}" alt=""></div>
+                <a href="{{ newsItem.productUrl }}{{ newsItem.product.pk }}" class="card">
+                    <img src="{{ newsItem.product.photos.0.photo.crop.300x300 }}" alt="">
+                    {% if newsItem.product.sertificate %}
+                    <img class="card__sertificat" src="{% static 'images/sertificated-product.png' %}"
+                        alt="Сертификат качества">
+                    {% endif %}
+                    {% if newsItem.product.discount %}
+                    <img class="card__discount" src="{% static 'images/skidka-chp-dzhaz.png' %}" alt="Скидка на товар">
+                    {% endif %}
+                </a>
                 <div class="news-item__content">
                     <div class="news-item__title">{{ newsItem.title }}</div>
                     <time class="news-item__time">{{ newsItem.changed|date:"d-M" }}</time>
+                    <div class="news__product-name"><a
+                            href="{{ newsItem.productUrl }}{{ newsItem.product.pk }}">{{ newsItem.product.name }}</a>
+                    </div>
+                    <div class="news__price">
+                        {% if newsItem.product.lowerPriceNoTable %}
+                        <p>от {{newsItem.product.lowerPriceNoTable|floatformat}} грн</p>
+                        {% elif newsItem.product.prices.0.lowerPrice %}
+                        <p>от {{newsItem.product.prices.0.lowerPrice|floatformat}} грн</p>
+                        {% else %}
+                        <span style="color: #535353;">Нет информации</span>
+                        {% endif %}
+                    </div>
                     <div class="news-item__body">{{ newsItem.body }}</div>
+                    <a href="{{ newsItem.productUrl }}{{ newsItem.product.pk }}"
+                        class="news-item__button"><span>Подробнее</span></a>
                 </div>
             </div>
         </div>
