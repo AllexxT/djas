@@ -4,7 +4,8 @@ from django.template import loader
 import pprint
 
 from products.models import (
-    Page, News, Sertificat, ServicePage, ProductCard
+    Page, News, Sertificat, ServicePage, ProductCard,
+    Exposition
 )
 
 pp = pprint.PrettyPrinter(width=80, compact=True)
@@ -156,7 +157,26 @@ def sertificates(request):
 
 def our_works(request):
     pageHead = Page.objects.get(page='our_works')
-    return render(request, 'frontend/our_works.html', {'seo': pageHead})
+    expositions = Exposition.objects.all()
+    fence = expositions.filter(category="fence")
+    sett = expositions.filter(category="sett")
+    monuments = expositions.filter(category="monuments")
+    brick = expositions.filter(category="brick")
+    parapet = expositions.filter(category="parapet")
+    return render(
+        request, 'frontend/our_works.html',
+        {
+            'seo': pageHead,
+            'expositions': expositions,
+            'catList': {
+                'fence': fence,
+                'sett': sett,
+                'monuments': monuments,
+                'brick': brick,
+                'parapet': parapet,
+            }
+        }
+    )
 
 
 def uslugi(request):

@@ -22,9 +22,9 @@
 
 .selected-image { width: 100%; height: 100%; object-fit: fill; transition: all 0.2s ease-in-out; }
 
-.selected-image__active { outline: 3px solid #b8860b; }
+.selected-image__active { border: 3px solid #b8860b; }
 
-.glry__fsicon { position: absolute; width: 10%; top: 80%; right: 10%; fill: red; cursor: pointer; filter: drop-shadow(3px 3px 3px black); }
+.glry__fsicon { position: absolute; width: 10%; top: 80%; right: 10%; fill: red; cursor: pointer; filter: drop-shadow(3px 3px 1px white); }
 
 .glry__fsicon:hover { transform: scale(1.1); }
 
@@ -34,13 +34,21 @@
 
 .full-screen span { cursor: pointer; -webkit-text-stroke: 2px #383844; filter: drop-shadow(5px 5px 2px black); }
 
+.full-screen span:hover { transform: scale(1.1); }
+
 .full-screen span { position: absolute; display: inline-block; right: 5%; color: #b8860b; font-weight: bold; font-size: 60px; filter: drop-shadow(); top: 50%; }
 
 .full-screen span:first-child { width: fit-content; position: absolute; display: inline-block; left: 5%; color: #b8860b; font-weight: bold; font-size: 60px; top: 50%; }
 
 .full-screen__image { width: 100%; height: 100%; object-fit: contain; }
 
-.full-screen__fsicon { width: 50px; position: absolute; top: 80%; right: 5%; cursor: pointer; fill: red; filter: drop-shadow(5px 5px 2px black); }
+.full-screen__fsicon { width: 50px; position: absolute; top: 80%; right: 5%; cursor: pointer; fill: red; filter: drop-shadow(5px 5px 1px white); }
+
+.full-screen__fsicon:hover { transform: scale(1.1); }
+
+.glry__counter { position: absolute; top: 0; right: 0; background: gray; opacity: 0.8; font-size: 16px; }
+
+.glry__counter p { color: white; padding: 10px 15px; }
 
 .pp { padding: 0 0 15pt 0; }
 

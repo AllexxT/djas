@@ -1,16 +1,42 @@
 {% extends 'frontend/layout/base.html' %}
-{% comment %} Head {% endcomment %}
+{% comment %} HEAD {% endcomment %}
 {% load static %}
 
-<title>{% block title %}{{ seo.title }}{% endblock title %}</title>
+<title>{% block title %}Купить {{ product.name }} в Запорожье выгодная Цена - ЧП Джас{% endblock title %}</title>
 
 {% block meta %}
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/index.css' %}">
-<meta name="description" content="{{ seo.description }}">
-<meta name="keywords" content="{{ seo.keywords }}">
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/our_works.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/css/our_works__gallery.css' %}">
+<meta name="description" content="{{ product.seoDescription }}">
+<meta name="keywords" content="{{ product.keywords }}">
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+{% comment %} <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> {% endcomment %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+
+
+
 {% endblock meta %}
 
-{% comment %} body {% endcomment %}
+{% comment %} BODY {% endcomment %}
 {% block content %}
-{% include 'frontend/includes/pageDescription.html' %}
+
+<div class="exposition">
+    <h1 class="page-title">Наши работы</h1>
+    <div id="gallery"></div>
+    {% comment %} <div class="exposition__category">
+        <h2 class="exposition__subtitle">Категория</h2>
+        <div class="exposition__gallery">
+            <div class="exposition__item">
+                <p class="gallery__description">{{ exposition.address }}</p>
+            </div>
+        </div>
+    </div> {% endcomment %}
+</div>
+{% include "frontend/includes/our_works__gallery.html" %}
+
+
+
 {% endblock content %}

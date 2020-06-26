@@ -109,8 +109,98 @@
     </div>
     <div class="pp__description">{{ product.description | safe }}</div>
 </div>
-<script>
-"use strict";function _slicedToArray(e,t){return _arrayWithHoles(e)||_iterableToArrayLimit(e,t)||_unsupportedIterableToArray(e,t)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){if(e){if("string"==typeof e)return _arrayLikeToArray(e,t);var r=Object.prototype.toString.call(e).slice(8,-1);return"Object"===r&&e.constructor&&(r=e.constructor.name),"Map"===r||"Set"===r?Array.from(e):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?_arrayLikeToArray(e,t):void 0}}function _arrayLikeToArray(e,t){(null==t||t>e.length)&&(t=e.length);for(var r=0,a=new Array(t);r<t;r++)a[r]=e[r];return a}function _iterableToArrayLimit(e,t){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e)){var r=[],a=!0,n=!1,c=void 0;try{for(var l,i=e[Symbol.iterator]();!(a=(l=i.next()).done)&&(r.push(l.value),!t||r.length!==t);a=!0);}catch(e){n=!0,c=e}finally{try{a||null==i.return||i.return()}finally{if(n)throw c}}return r}}function _arrayWithHoles(e){if(Array.isArray(e))return e}var _React=React,useState=_React.useState,Fragment=_React.Fragment;function GalleryApp(){var e=_slicedToArray(useState(0),2),t=e[0],r=e[1],a=_slicedToArray(useState(!1),2),n=a[0],c=a[1],l=[{% for img in product.photos %}"{{ img.photo.crop.400x400 }}",{% endfor %}],i=function(){r(t!==l.length-1?t+1:0)},o=function(){r(0===t?l.length-1:t-1)};return React.createElement(Fragment,null,n&&React.createElement("div",{className:"full-screen"},React.createElement("span",{onClick:function(){return o()}},"<"),React.createElement("img",{className:"full-screen__image",src:[{% for img in product.photos %}"/media/{{ img.photo }}",{% endfor %}][t],alt:""}),React.createElement("img",{className:"full-screen__fsicon",onClick:function(){return c(!1)},src:"{% static 'images/fullscreen.svg' %}",alt:""}),React.createElement("span",{onClick:function(){return i()}},">")),React.createElement("div",{className:"glry__wrapper"},React.createElement("div",{className:"thumb-list"},[{% for img in product.photos %}"{{ img.photo.crop.50x50 }}",{% endfor %}].map(function(e,a){return React.createElement("div",{className:"thumb",key:a,onClick:function(){return function(e){r(e)}(a)}},React.createElement("img",{className:a===t?"selected-image selected-image__active":"selected-image",src:e,alt:""}))})),React.createElement("div",{className:"glry unselectable"},React.createElement("span",{onClick:function(){return o()}},"<"),React.createElement("img",{className:"glry__main-image",src:l[t],alt:""}),React.createElement("img",{className:"glry__fsicon",onClick:function(){return c(!0)},src:"{% static 'images/fullscreen.svg' %}",alt:""}),React.createElement("span",{onClick:function(){return i()}},">"))))}ReactDOM.render(React.createElement(GalleryApp,null),document.getElementById("gallery"));
+<script type="text/babel">
+    {% comment %} const Hello = () => {
+    let image = "{{product.photos.1.photo.crop.400x400}}"
+    return (
+        <img src={image} alt="" />
+    )
+} {% endcomment %}
+const { useState, Fragment } = React
+
+function GalleryApp() {
+  const [current, setCurrent] = useState(0);
+  const [fullScreen, setFullScreen] = useState(false);
+  const images = [
+      {% for img in product.photos %}
+      "{{ img.photo.crop.400x400 }}",
+      {% endfor %}
+  ];
+  const image_thumbs = [
+      {% for img in product.photos %}
+      "{{ img.photo.crop.50x50 }}",
+      {% endfor %}
+  ];
+  const image_full = [
+      {% for img in product.photos %}
+      "/media/{{ img.photo }}",
+      {% endfor %}
+  ];
+  const next = () => {
+    current !== images.length - 1 ? setCurrent(current + 1) : setCurrent(0);
+  };
+  const back = () => {
+    current === 0 ? setCurrent(images.length - 1) : setCurrent(current - 1);
+  };
+  const selectThumb = (index) => {
+    setCurrent(index);
+  };
+  fullScreen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = ''
+  return (
+    <Fragment>
+      {fullScreen && (
+        <div className={"full-screen"}>
+          <span onClick={() => back()}>{"<"}</span>
+          <img className={"full-screen__image"} src={image_full[current]} alt="" />
+          <div class="glry__counter">
+              <p>{current+1} из {images.length}</p>
+          </div>
+          <img
+            className={"full-screen__fsicon"}
+            onClick={() => setFullScreen(false)}
+            src={"{% static 'images/fullscreen.svg' %}"}
+            alt=""
+          />
+          <span onClick={() => next()}>{">"}</span>
+        </div>
+      )}
+      <div className={"glry__wrapper"}>
+        <div className={"thumb-list"}>
+          {image_thumbs.map((thumb, index) => (
+            <div
+              className={"thumb"}
+              key={index}
+              onClick={() => selectThumb(index)}
+            >
+              <img
+                className={
+                  index === current
+                    ? "selected-image selected-image__active"
+                    : "selected-image"
+                }
+                src={thumb}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className={"glry"}>
+          <span onClick={() => back()}>{"<"}</span>
+          <img className={"glry__main-image"} src={images[current]} alt="" />
+          <div class="glry__counter">
+              <p>{current+1} из {images.length}</p>
+          </div>
+          <img className={"glry__fsicon"} onClick={() => setFullScreen(true)} src={"{% static 'images/fullscreen.svg' %}"} alt="" />
+          <span onClick={() => next()}>{">"}</span>
+        </div>
+      </div>
+    </Fragment>
+  );
+}
+ReactDOM.render(
+    <GalleryApp />,
+    document.getElementById('gallery')
+);
 </script>
 
 
