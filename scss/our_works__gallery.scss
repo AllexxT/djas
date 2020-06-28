@@ -104,9 +104,6 @@
     height: 100%;
     background: gray;
     z-index: 1;
-    &:fullscreen {
-        background: red;
-    }
 
     span {
         cursor: pointer;

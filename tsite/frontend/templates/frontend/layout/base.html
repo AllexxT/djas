@@ -14,6 +14,10 @@
   <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/base.css' %}">
   {% block meta %}
   {% endblock meta %}
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+
   <link rel="apple-touch-icon" sizes="57x57" href="{% static 'icons/apple-icon-57x57.png' %}">
   <link rel="apple-touch-icon" sizes="60x60" href="{% static 'icons/apple-icon-60x60.png' %}">
   <link rel="apple-touch-icon" sizes="72x72" href="{% static 'icons/apple-icon-72x72.png' %}">
@@ -30,9 +34,6 @@
   <link rel="manifest" href="{% static 'icons/manifest.json' %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="{% static 'icons/ms-icon-144x144.png' %}">
-</head>
-
-<body>
   <style type="text/css">
     #hellopreloader_preload {
       display: block;
@@ -47,10 +48,13 @@
       background-size: 41px;
     }
   </style>
+</head>
+
+<body>
   <div id="hellopreloader">
     <div id="hellopreloader_preload"></div>
   </div>
-  <script type="text/javascript">
+  <script>
     var hellopreloader = document.getElementById("hellopreloader_preload");
 
     function fadeOutnojquery(el) {
@@ -69,146 +73,225 @@
       }, 200);
     };
   </script>
-  <header>
-    <div class="container">
-      <div class="company">
-        <div class="burger-menu"></div>
-        <div class="company__logo">
-          <a href="/">ЧП <span>Джас</span></a>
-        </div>
-        <div class="company__address">
-          <div class="company__icon"><img src="{% static 'images/adres-proizvoditelya-chp-dzhas.png' %}" alt="Адрес фирмы"></div>
-          <div class="company__location">
-            <p>г. Запорожье, пос. Кременно 40</p>
-            <p>Мокрянский карьер № 2</p>
-          </div>
-        </div>
-        <div class="company__numbers">
-          <div class="company__phone">
-            <img src="{% static 'images/uznat-cenu-trotuarnoj-plitki-po-nomeru-telefona-chp-dzhas.png' %}" alt="Контактные номера">
-          </div>
-          <ul class="company__digits">
-            <li>
-              <a href="viber://chat?number=+380638086001"><span>+38 (063) 808-60-01</span>
-                <div class="company__viber"><img src="{% static 'images/nomera-telefonov-proizvoditelya-trotuarnoj-plitki-chp-dzhas.png' %}" alt="Написать нам в Viber"></div>
-              </a>
-            </li>
-            <li>
-              <a href="tel:+380675273100"><span>+38 (067) 527-31-00</span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="navigation-block">
-    <div class="container">
-      <div class="main-row">
-        <aside class="menu">
-          <nav class="navigation">
-            <ul>
-              <li class="navigation-link"><a href="{% url 'news' %}">НОВОСТИ</a></li>
-              <li class="navigation-link"><a href="/">ТОВАРЫ</a></li>
-              <li>
-                <ul class="navigation__submenu">
-                  <li class="submenu__links"><a href="{% url 'sett' %}">ТРОТУАРНАЯ ПЛИТКА, БОРДЮР И ВОДОСТОК</a>
-                    <span class="submenu-icon" />
-                    <ul class="popup-menu">
-                      <li class="popup-link"><a href="{% url 'sett' %}#vibropressovannaya">Вибропрессованая</a></li>
-                      <li class="popup-link"><a href="{% url 'sett' %}#vibrolitaya">Вибролитая</a></li>
-                      <li class="popup-link"><a href="{% url 'sett' %}#bordyur">Бордюр</a></li>
-                      <li class="popup-link"><a href="{% url 'sett' %}#vodostok"">Водосток</a></li>
-                    </ul>
-                  </li>
-                  <li class="submenu__links"><a href="{% url 'fence' %}">ЕВРОЗАБОР</a>
-                    <span class="submenu-icon" />
-                    <ul class="popup-menu">
-                      <li class="popup-link"><a href="{% url 'fence' %}#glyancevyj">Глянцевый бетонный</a></li>
-                      <li class="popup-link"><a href="{% url 'fence' %}#betonnyj">Бетонный</a></li>
-                      <li class="popup-link"><a href="{% url 'fence' %}#stolby">Столбы бетонные</a></li>
-                    </ul>
-                  </li>
-                  <li class="submenu__links"><a href="{% url 'brick' %}">КОЛОТЫЙ БЛОК И КИРПИЧ</a>
-                    <span class="submenu-icon" />
-                    <ul class="popup-menu">
-                      <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-blok">Блок Облицовочный</a></li>
-                      <li class="popup-link"><a href="{% url 'brick' %}#fundamentnyj-blok">Фундаментный блок</a></li>
-                      <li class="popup-link"><a href="{% url 'brick' %}#stroitelnyj-blok">Блок Строительный</a></li>
-                      <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-kirpich">Кирпич Облицовочный</a></li>
-                    </ul>
-                  </li>
-                  <li class="submenu__links"><a href="{% url 'parapet' %}">КРЫШКИ И ПАРАПЕТЫ</a>
-                    <span class="submenu-icon" />
-                    <ul class="popup-menu">
-                      <li class="popup-link"><a href="{% url 'parapet' %}#kryshki">Крышки</a></li>
-                      <li class="popup-link"><a href="{% url 'parapet' %}#parapet">Парапеты</a></li>
-                    </ul>
-                  </li>
-                  <li class="submenu__links"><a href="{% url 'monuments' %}">ПАМЯТНИКИ</a>
-                    <span class="submenu-icon" />
-                    <ul class="popup-menu">
-                      <li class="popup-link"><a href="{% url 'monuments' %}#granitnye">Гранитные памятники</a></li>
-                      <li class="popup-link"><a href="{% url 'monuments' %}#betonnye">Бетонные памятники</a></li>
-                      <li class="popup-link"><a href="{% url 'monuments' %}#otmostka">Отмостка</a></li>
-                      <li class="popup-link"><a href="{% url 'monuments' %}#tablichki">Овалы и таблички</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="navigation-link"><a href="{% url 'uslugi' %}">НАШИ УСЛУГИ</a></li>
-              <li class="navigation-link"><a href="{% url 'sertificates' %}">СЕРТИФИКАТЫ</a></li>
-              <li class="navigation-link"><a href="{% url 'our_works' %}">НАШИ РАБОТЫ</a></li>
-            </ul>
-          </nav>
-        </aside>
-        <main class="content">
-          {% block content %}
-          Контент
-          {% endblock content %}
-        </main>
-      </div>
+  <div class="mobile-nav">
+    <div class="mobile-nav__content">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item"><a href="{% url 'news' %}">НОВОСТИ</a></li>
+        <li class="mobile-nav__item"><a href="{% url 'index' %}">ТОВАРЫ</a></li>
+        <li class="mobile-nav__item mobile-nav__item-long subitem"><a href="{% url 'sett' %}">ТРОТУАРНАЯ
+            ПЛИТКА<br />БОРДЮР И ОТЛИВЫ</a></li>
+        <li class="mobile-nav__item subitem"><a href="{% url 'fence' %}">ЕВРОЗАБОР</a></li>
+        <li class="mobile-nav__item subitem"><a href="{% url 'brick' %}">КОЛОТЫЙ БЛОК И КИРПИЧ</a></li>
+        <li class="mobile-nav__item subitem"><a href="{% url 'parapet' %}">КРЫШКИ И ПАРАПЕТЫ</a></li>
+        <li class="mobile-nav__item subitem"><a href="{% url 'monuments' %}">ПАМЯТНИКИ</a></li>
+        <li class="mobile-nav__item"><a href="{% url 'uslugi' %}">УСЛУГИ</a></li>
+        <li class="mobile-nav__item"><a href="{% url 'sertificates' %}">СЕРТИФИКАТЫ</a></li>
+        <li class="mobile-nav__item"><a href="{% url 'our_works' %}">НАШИ РАБОТЫ</a></li>
+        {% comment %} <div class="nav-logo">ЧП<span> Джас</span></div> {% endcomment %}
+      </ul>
     </div>
   </div>
-  <footer>
-    <div class="footer-container">
-      <div class="footer__row">
-        <div class="footer__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2252.6643797090883!2d35.28376216223628!3d47.822455577584876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x692a9f0aff452ff6!2z0KfQnyDQlNC20LDRgSDRgtGA0L7RgtGD0LDRgNC90LDRjyDQv9C70LjRgtC60LAg0LIg0JfQsNC_0L7RgNC-0LbRjNC1!5e0!3m2!1sru!2sua!4v1588963597703!5m2!1sru!2sua"
-            style='border: 0px;' />
-        </div>
-        <div class="footer__text-row">
-          <div class="footer__menu">
-            <h3 class="footer-title">Меню сайта</h3>
-            <nav>
-              <a href="{% url 'index' %}">Товары</a>
-              <a href="{% url 'news' %}">Новости</a>
-              <a href="{% url 'sertificates' %}">Сертификаты</a>
-              <a href="{% url 'uslugi' %}">Услуги</a>
-              <a href="{% url 'our_works' %}">Наши работы</a>
-            </nav>
+  <div class="site-section">
+    <header>
+      <div class="container">
+        <div class="company">
+          <div class="burger-menu">
+            <span>—</span>
+            <span>—</span>
+            <span>—</span>
           </div>
-          <address class="footer__address">
-            <div class="footer__contacts">
-              <h3 class="footer-title">Контакты</h3>
-              <a href="mailto:pan2404@rambler.ru">pan2404@rambler.ru</a>
-              <a href="tel:+380638086001">+38 (063) 808-60-01</a>
-              <a href="tel:+380675273100">+38 (067) 527-31-00</a>
-              <a href="tel:+380503419001">+38 (050) 341-90-01</a>
-              <p>c 8-00 до 16-00</p>
+          <div class="company__logo">
+            <a>ЧП <span>Джас</span></a>
+          </div>
+          <div class="company__address">
+            <div class="company__icon">
+              <img src="{% static 'images/adres-proizvoditelya-chp-dzhas.png' %}" alt="Адрес фирмы">
             </div>
-            <div class="footer__contacts">
-              <h3 class="footer-title">Адрес</h3>
-              <p>г. Запорожье</p>
-              <p>пос. Кременно 40</p>
+            <div class="company__location">
+              <p>г. Запорожье, пос. Кременно 40</p>
               <p>Мокрянский карьер № 2</p>
             </div>
-          </address>
+          </div>
+          <div class="company__numbers">
+            <div class="company__phone">
+              <img src="{% static 'images/uznat-cenu-trotuarnoj-plitki-po-nomeru-telefona-chp-dzhas.png' %}"
+                alt="Контактные номера">
+            </div>
+            <ul class="company__digits">
+              <li>
+                <a href="viber://chat?number=+380638086001"><span>+38 (063) 808-60-01</span>
+                  <div class="company__viber"><img
+                      src="{% static 'images/nomera-telefonov-proizvoditelya-trotuarnoj-plitki-chp-dzhas.png' %}"
+                      alt="Написать нам в Viber">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+380675273100"><span>+38 (067) 527-31-00</span></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <small class="copyright">© Все права защищены 2020 г</small>
+    </header>
+    <div class="navigation-block">
+      <div class="container">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item"><a href="{% url 'index' %}">ТОВАРЫ</a></li>
+          {% block breadcrumbs %}
+          {% endblock breadcrumbs %}
+        </ul>
+        <div class="main-row">
+          <aside class="menu">
+            <nav class="navigation">
+              <ul>
+                <li
+                  class="navigation-link {% if request.resolver_match.url_name == 'news' %}navigation-link-active{% endif %}">
+                  <a href="{% url 'news' %}">НОВОСТИ</a></li>
+                <li
+                  class="navigation-link {% if request.resolver_match.url_name == 'index' %}navigation-link-active{% endif %}">
+                  <a href="/">ТОВАРЫ</a></li>
+                <li>
+                  <ul class="navigation__submenu">
+                    <li class="submenu__links {% if request.resolver_match.url_name == 'sett' %}active-submenu{% endif %}"><a href="{% url 'sett' %}">ТРОТУАРНАЯ ПЛИТКА, БОРДЮР И ВОДОСТОК</a>
+                      <span class="submenu-icon" />
+                      <ul class="popup-menu">
+                        <li class="popup-link"><a href="{% url 'sett' %}#vibropressovannaya">Вибропрессованая</a></li>
+                        <li class="popup-link"><a href="{% url 'sett' %}#vibrolitaya">Вибролитая</a></li>
+                        <li class="popup-link"><a href="{% url 'sett' %}#bordyur">Бордюр</a></li>
+                        <li class="popup-link"><a href="{% url 'sett' %}#vodostok">Водосток</a></li>
+                      </ul>
+                    </li>
+                    <li class=" submenu__links {% if request.resolver_match.url_name == 'fence' %}active-submenu{% endif %}"><a href="{% url 'fence' %}">ЕВРОЗАБОР</a>
+                      <span class="submenu-icon" />
+                      <ul class="popup-menu">
+                        <li class="popup-link"><a href="{% url 'fence' %}#glyancevyj">Глянцевый бетонный</a></li>
+                        <li class="popup-link"><a href="{% url 'fence' %}#betonnyj">Бетонный</a></li>
+                        <li class="popup-link"><a href="{% url 'fence' %}#stolby">Столбы бетонные</a></li>
+                      </ul>
+                    </li>
+                    <li class="submenu__links {% if request.resolver_match.url_name == 'brick' %}active-submenu{% endif %}"><a href="{% url 'brick' %}">КОЛОТЫЙ БЛОК И КИРПИЧ</a>
+                      <span class="submenu-icon" />
+                      <ul class="popup-menu">
+                        <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-blok">Блок Облицовочный</a>
+                        </li>
+                        <li class="popup-link"><a href="{% url 'brick' %}#fundamentnyj-blok">Фундаментный блок</a>
+                        </li>
+                        <li class="popup-link"><a href="{% url 'brick' %}#stroitelnyj-blok">Блок Строительный</a>
+                        </li>
+                        <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-kirpich">Кирпич
+                            Облицовочный</a></li>
+                      </ul>
+                    </li>
+                    <li class="submenu__links {% if request.resolver_match.url_name == 'parapet' %}active-submenu{% endif %}"><a href="{% url 'parapet' %}">КРЫШКИ И ПАРАПЕТЫ</a>
+                      <span class="submenu-icon" />
+                      <ul class="popup-menu">
+                        <li class="popup-link"><a href="{% url 'parapet' %}#kryshki">Крышки</a></li>
+                        <li class="popup-link"><a href="{% url 'parapet' %}#parapet">Парапеты</a></li>
+                      </ul>
+                    </li>
+                    <li class="submenu__links {% if request.resolver_match.url_name == 'monuments' %}active-submenu{% endif %}"><a href="{% url 'monuments' %}">ПАМЯТНИКИ</a>
+                      <span class="submenu-icon" />
+                      <ul class="popup-menu">
+                        <li class="popup-link"><a href="{% url 'monuments' %}#granitnye">Гранитные памятники</a>
+                        </li>
+                        <li class="popup-link"><a href="{% url 'monuments' %}#betonnye">Бетонные памятники</a></li>
+                        <li class="popup-link"><a href="{% url 'monuments' %}#otmostka">Отмостка</a></li>
+                        <li class="popup-link"><a href="{% url 'monuments' %}#tablichki">Овалы и таблички</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="navigation-link {% if request.resolver_match.url_name == 'uslugi' %}navigation-link-active{% endif %}">
+                  <a href="{% url 'uslugi' %}">НАШИ УСЛУГИ</a></li>
+                <li
+                  class="navigation-link {% if request.resolver_match.url_name == 'sertificates' %}navigation-link-active{% endif %}">
+                  <a href="{% url 'sertificates' %}">СЕРТИФИКАТЫ</a></li>
+                <li
+                  class="navigation-link {% if request.resolver_match.url_name == 'our_works' %}navigation-link-active{% endif %}""><a href="
+                  {% url 'our_works' %}">НАШИ РАБОТЫ</a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <main class="content">
+            {% block content %}
+            Контент
+            {% endblock content %}
+          </main>
+        </div>
+      </div>
     </div>
-  </footer>
+    <footer>
+      <div class="footer-container">
+        <div class="footer__row">
+          <div class="footer__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2252.6643797090883!2d35.28376216223628!3d47.822455577584876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x692a9f0aff452ff6!2z0KfQnyDQlNC20LDRgSDRgtGA0L7RgtGD0LDRgNC90LDRjyDQv9C70LjRgtC60LAg0LIg0JfQsNC_0L7RgNC-0LbRjNC1!5e0!3m2!1sru!2sua!4v1588963597703!5m2!1sru!2sua"
+              style='border: 0px;' />
+          </div>
+          <div class="footer__text-row">
+            <div class="footer__menu">
+              <h3 class="footer-title">Меню сайта</h3>
+              <nav>
+                <a href="{% url 'index' %}">Товары</a>
+                <a href="{% url 'news' %}">Новости</a>
+                <a href="{% url 'sertificates' %}">Сертификаты</a>
+                <a href="{% url 'uslugi' %}">Услуги</a>
+                <a href="{% url 'our_works' %}">Наши работы</a>
+              </nav>
+            </div>
+            <address class="footer__address">
+              <div class="footer__contacts">
+                <h3 class="footer-title">Контакты</h3>
+                <a href="mailto:pan2404@rambler.ru">pan2404@rambler.ru</a>
+                <a href="tel:+380638086001">+38 (063) 808-60-01</a>
+                <a href="tel:+380675273100">+38 (067) 527-31-00</a>
+                <a href="tel:+380503419001">+38 (050) 341-90-01</a>
+                <p>c 8-00 до 16-00</p>
+              </div>
+              <div class="footer__contacts">
+                <h3 class="footer-title">Адрес</h3>
+                <p>г. Запорожье</p>
+                <p>пос. Кременно 40</p>
+                <p>Мокрянский карьер № 2</p>
+              </div>
+            </address>
+          </div>
+        </div>
+        <small class="copyright">© Все права защищены 2020 г</small>
+      </div>
+    </footer>
+  </div>
+  <script>
+    let mobMenu = document.getElementsByClassName('mobile-nav')[0]
+    let siteSection = document.getElementsByClassName('site-section')[0]
+    const menuToggler = () => {
+      if (mobMenu.className.includes('mobile-nav_opened')) {
+        siteSection.style['overflow'] = 'hidden'
+
+        mobMenu.className = 'mobile-nav'
+        siteSection.className = 'site-section'
+        siteSection.removeEventListener("touchstart", menuOff, false)
+      } else {
+        siteSection.style['overflow'] = 'hidden'
+        mobMenu.className += ' mobile-nav_opened'
+        siteSection.className += ' site-section_mobile-nav'
+        siteSection.addEventListener("touchstart", menuOff, false)
+
+      }
+    }
+    document.getElementsByClassName('burger-menu')[0].onclick = menuToggler
+
+    const menuOff = (el) => {
+      console.log(el)
+      siteSection.style['overflow'] = 'unset'
+
+      mobMenu.className = 'mobile-nav'
+      siteSection.className = 'site-section'
+    }
+  </script>
 </body>
 
 </html>

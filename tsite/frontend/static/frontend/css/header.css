@@ -2,7 +2,7 @@
 
 .burger-menu { position: absolute; }
 
-.company { display: flex; justify-content: space-around; padding: 3px 0 0 0; flex-wrap: wrap; }
+.company { position: relative; display: flex; justify-content: space-around; padding: 3px 0 0 0; flex-wrap: wrap; }
 
 @media (max-width: 460px) { .company { flex-flow: column; align-items: center; } }
 

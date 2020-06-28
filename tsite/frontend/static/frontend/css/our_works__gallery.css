@@ -30,8 +30,6 @@
 
 .full-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: gray; z-index: 1; }
 
-.full-screen:fullscreen { background: red; }
-
 .full-screen span { cursor: pointer; -webkit-text-stroke: 2px #383844; filter: drop-shadow(5px 5px 2px black); }
 
 .full-screen span:hover { transform: scale(1.1); }

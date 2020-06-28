@@ -63,6 +63,19 @@ aside.menu {
       padding: 5pt 0 5pt 7pt;
     }
 }
+.navigation-link-active {
+    a {
+        color: #fecf53;
+    }
+}
+.active-submenu {
+    a {
+        color: #fecf53;
+    }
+    span {
+        background: #d3a52e;
+    }
+}
 
 .submenu-icon {
     display: inline-block;

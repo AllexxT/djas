@@ -22,6 +22,12 @@ aside.menu { padding: 15px 0 0 0; flex-basis: 540px; max-width: 150px; }
 
 .submenu__links a { position: relative; color: #e4ddd9; font-weight: bold; display: block; padding: 5pt 0 5pt 7pt; }
 
+.navigation-link-active a { color: #fecf53; }
+
+.active-submenu a { color: #fecf53; }
+
+.active-submenu span { background: #d3a52e; }
+
 .submenu-icon { display: inline-block; align-self: stretch; flex: 0 0 5pt; order: -1; }
 
 .popup-menu { position: absolute; background: #919191; top: -5px; left: 95%; display: none; z-index: 10; padding: 5px; box-shadow: 0px 5px 10px gray; }

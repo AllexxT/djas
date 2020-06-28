@@ -17,7 +17,7 @@ footer .footer-container .footer__row .footer__map iframe { width: 100%; height:
 
 footer .footer-container .footer__row .footer__text-row { display: flex; flex: 1 1 auto; justify-content: center; width: 100%; justify-content: space-around; }
 
-@media (max-width: 340px) { footer .footer-container .footer__row .footer__text-row { flex-flow: column; margin-left: 15px; } }
+@media (max-width: 340px) { footer .footer-container .footer__row .footer__text-row { flex-flow: column; } }
 
 footer .footer-container .footer__row .footer__text-row .footer__menu { display: flex; flex-flow: column; margin: 0 0 15pt 0; }
 

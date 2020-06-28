@@ -7,7 +7,7 @@
 .news {
     display: flex;
     flex-wrap: wrap;
-    @media (max-width: 950px) {
+    @media (max-width: 1300px) {
         flex-direction: column;
     }
 }
@@ -28,7 +28,7 @@
     a {
         position: relative;
     }
-    @media (max-width: 420px) {
+    @media (max-width: 580px) {
         display: flex;
         flex-direction: column;
         // flex-direction: column-reverse;
