@@ -24,6 +24,8 @@ aside.menu { padding: 15px 0 0 0; flex-basis: 540px; max-width: 150px; }
 
 .navigation-link-active a { color: #fecf53; }
 
+.navigation-link-active span { background: #d3a52e; }
+
 .active-submenu a { color: #fecf53; }
 
 .active-submenu span { background: #d3a52e; }

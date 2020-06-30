@@ -12,6 +12,17 @@
 
 {% comment %} BODY {% endcomment %}
 {% block content %}
+<div class="go-up">Вверх</div>
+<div class="anch-menu">
+    <span>Тип</span>
+    <ul class="anch-menu__list">
+        {% if capital %}<li class="anch-menu__item"><a href="#betonnye">Бетонные памятники</a></li>{% endif %}
+        {% if granite %}<li class="anch-menu__item"><a href="#granitnye">Гранитные памятники</a></li>{% endif %}
+        {% if nameplate %}<li class="anch-menu__item"><a href="#tablichki">Овалы и Таблички</a></li>{% endif %}
+        {% if coverplate %}<li class="anch-menu__item"><a href="#otmostka">Отмостка</a></li>{% endif %}
+    </ul>
+</div>
+
 <section class="products">
     <h1 class="page-title">Памятники и сопутствующие товары</h1>
     {% if capital %}
@@ -66,5 +77,13 @@
 
 {% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
 {% include 'frontend/includes/pageDescription.html' %}
-
+<script>
+    document.getElementsByClassName('go-up')[0].onclick = () => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
+    }
+</script>
 {% endblock content %}

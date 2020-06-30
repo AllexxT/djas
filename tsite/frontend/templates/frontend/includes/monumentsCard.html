@@ -5,14 +5,14 @@
         <div class="monument-image__animation">
             <a href="{{card.pk}}" class="card__image">
                 <img class="monument-image__picture"
-                    src="/media/{{card.photos.0.photo|default:'static/images/placeholder.jpeg'}}" alt="{{card.name}}">
+                    src="/media/{{card.photos.0.photo|default:'static/images/placeholder.jpeg'}}" alt="{{card.name}} Выгодная цена в Запорожье и области">
             </a>
             {% if card.sertificate %}
             <img class="card__sertificat" src="{% static 'images/sertificated-product.png' %}"
                 alt="Сертификат качества">
             {% endif %}
             {% if card.discount %}
-            <img class="card__discount" src="{% static 'images/skidka-chp-dzhaz.png' %}" alt="Скидка на товар">
+            <img class="card__discount" src="{% static 'images/skidka-trotuar-bud.png' %}" alt="Скидка на товар">
             {% endif %}
         </div>
     </div>

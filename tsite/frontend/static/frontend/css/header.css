@@ -8,15 +8,18 @@
 
 .company .company__logo { position: relative; top: 5pt; padding-left: 35pt; }
 
-@media (max-width: 460px) { .company .company__logo { padding: 0 0 10px 0; } }
+@media (max-width: 790px) { .company .company__logo { padding-bottom: 8px; } }
 
-.company .company__logo a { font-weight: bold; font-size: 28pt; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; }
+@media (max-width: 483px) { .company .company__logo { padding: 0 0 10px 0; } }
+
+.company .company__logo a { font-weight: bold; font-size: 38px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: whitesmoke; }
 
 .company .company__logo a span { color: #f5cb55; }
 
 .company .company__address { display: flex; flex-direction: column; align-items: center; padding-bottom: 5px; }
 
-@media (max-width: 688px) { .company .company__address { order: 1; } }
+@media (max-width: 790px) { .company .company__address { order: 1; }
+  .company .company__address .company__logo { padding-bottom: 33px; } }
 
 .company .company__address img { max-width: 25pt; }
 

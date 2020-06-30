@@ -74,6 +74,8 @@ class ProductCard(models.Model):
     owner = models.ForeignKey(
         User, related_name="Description", on_delete=models.CASCADE, null=True)
     name = models.CharField('Название', max_length=200, unique=True)
+    URLname = models.CharField(
+        "Название в адресной строке браузера", max_length=100, null=True, blank=True)
     description = models.TextField(
         'Описание на странице', null=True, blank=True)
     discount = models.BooleanField('Скидка', blank=True)

@@ -25,7 +25,7 @@ SECRET_KEY = 'k*24pyuy(i2c*mdjy(ety=b3*o(476ln#wp7u4s)_n75tzdmft'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pasenko.zp.ua', 'www.pasenko.zp.ua', '*']
+ALLOWED_HOSTS = ['trotuar-bud.zp.ua', 'www.trotuar-bud.zp.ua', '*']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'livereload',
+    # 'livereload',
     'products',
     'rest_framework',
     'frontend',
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

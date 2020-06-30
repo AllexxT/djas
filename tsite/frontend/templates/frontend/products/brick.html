@@ -15,6 +15,18 @@
 <li class="breadcrumbs__item"><a href="{% url 'brick' %}">БЛОК КИРПИЧ</a></li>
 {% endblock breadcrumbs %} {% endcomment %}
 {% block content %}
+<div class="go-up">Вверх</div>
+<div class="anch-menu">
+    <span>Тип</span>
+    <ul class="anch-menu__list">
+        {% if facblock %}<li class="anch-menu__item"><a href="#oblicovochnyj-blok">Облицовочный Блок</a></li>{% endif %}
+        {% if baseblock %}<li class="anch-menu__item"><a href="#fundamentnyj-blok">Фундаментный Блок</a></li>{% endif %}
+        {% if buildblock %}<li class="anch-menu__item"><a href="#stroitelnyj-blok">Строительный Блок</a></li>{% endif %}
+        {% if facbrick %}<li class="anch-menu__item"><a href="#oblicovochnyj-kirpich">Облицовочный Кирпич</a></li>{% endif %}
+    </ul>
+</div>
+
+
 <section class="products">
     <h1 class="page-title">Строительный Блок и Облицовочный Кирпич</h1>
     {% if facblock %}
@@ -69,5 +81,13 @@
 
 {% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
 {% include 'frontend/includes/pageDescription.html' %}
-
+<script>
+    document.getElementsByClassName('go-up')[0].onclick = () => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
+    }
+</script>
 {% endblock content %}

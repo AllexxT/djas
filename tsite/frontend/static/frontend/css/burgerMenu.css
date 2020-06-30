@@ -18,7 +18,7 @@
 
 .site-section_mobile-nav { transform: translate3d(240px, 0, 0); }
 
-.burger-menu { position: absolute; left: 0; top: 0; display: flex; flex-flow: column; padding: 10px; font-size: 30px; line-height: 10px; font-weight: bold; color: #f5cb55; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+.burger-menu { position: absolute; left: 0; top: 0; display: flex; flex-flow: column; padding: 10px; font-size: 30px; line-height: 10px; font-weight: bold; color: #f5cb55; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); z-index: 10; }
 
 @media (min-width: 900px) { .burger-menu { display: none; } }
 

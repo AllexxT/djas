@@ -8,15 +8,16 @@
   <meta http-equiv="Content-Type" content="text/html: charset=utf-8"> {% endcomment %}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-  <meta name="author" content="ЧП Джас">
+  <meta name="author" content="ТРОТУАР БУД">
   <meta name="yandex-verification" content="c80fe663dbd633e4" />
-  <title>{% block title %}ЧП Джас{% endblock title %}</title>
+  <title>{% block title %}ТРОТУАР БУД{% endblock title %}</title>
   <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/base.css' %}">
   {% block meta %}
   {% endblock meta %}
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+  {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"
+    charset="utf-8"></script> {% endcomment %}
 
   <link rel="apple-touch-icon" sizes="57x57" href="{% static 'icons/apple-icon-57x57.png' %}">
   <link rel="apple-touch-icon" sizes="60x60" href="{% static 'icons/apple-icon-60x60.png' %}">
@@ -57,20 +58,17 @@
   <script>
     var hellopreloader = document.getElementById("hellopreloader_preload");
 
-    function fadeOutnojquery(el) {
-      el.style.opacity = 1;
-      var interhellopreloader = setInterval(function () {
-        el.style.opacity = el.style.opacity - 0.05;
-        if (el.style.opacity <= 0.05) {
-          clearInterval(interhellopreloader);
-          hellopreloader.style.display = "none";
-        }
-      }, 16);
+    function fadeOutnojquery(e) {
+      e.style.opacity = 1;
+      var o = setInterval(function () {
+        e.style.opacity = e.style.opacity - .05, e.style.opacity <= .05 && (clearInterval(o), hellopreloader.style
+          .display = "none")
+      }, 16)
     }
     window.onload = function () {
       setTimeout(function () {
-        fadeOutnojquery(hellopreloader);
-      }, 200);
+        fadeOutnojquery(hellopreloader)
+      }, 200)
     };
   </script>
   <div class="mobile-nav">
@@ -101,27 +99,27 @@
             <span>—</span>
           </div>
           <div class="company__logo">
-            <a>ЧП <span>Джас</span></a>
+            <a>ТРОТУАР <span>БУД</span></a>
           </div>
           <div class="company__address">
             <div class="company__icon">
-              <img src="{% static 'images/adres-proizvoditelya-chp-dzhas.png' %}" alt="Адрес фирмы">
+              <img src="{% static 'images/adres-proizvoditelya-trotuar-bud.png' %}" alt="Адрес фирмы">
             </div>
             <div class="company__location">
-              <p>г. Запорожье, пос. Кременно 40</p>
-              <p>Мокрянский карьер № 2</p>
+              <p>г. Запорожье, ул. Космическая</p>
+              <p>119</p>
             </div>
           </div>
           <div class="company__numbers">
             <div class="company__phone">
-              <img src="{% static 'images/uznat-cenu-trotuarnoj-plitki-po-nomeru-telefona-chp-dzhas.png' %}"
+              <img src="{% static 'images/uznat-cenu-trotuarnoj-plitki-po-nomeru-telefona-trotuar-bud.png' %}"
                 alt="Контактные номера">
             </div>
             <ul class="company__digits">
               <li>
                 <a href="viber://chat?number=+380638086001"><span>+38 (063) 808-60-01</span>
                   <div class="company__viber"><img
-                      src="{% static 'images/nomera-telefonov-proizvoditelya-trotuarnoj-plitki-chp-dzhas.png' %}"
+                      src="{% static 'images/nomera-telefonov-proizvoditelya-trotuarnoj-plitki-trotuar-bud.png' %}"
                       alt="Написать нам в Viber">
                   </div>
                 </a>
@@ -153,8 +151,13 @@
                   <a href="/">ТОВАРЫ</a></li>
                 <li>
                   <ul class="navigation__submenu">
-                    <li class="submenu__links {% if request.resolver_match.url_name == 'sett' %}active-submenu{% endif %}"><a href="{% url 'sett' %}">ТРОТУАРНАЯ ПЛИТКА, БОРДЮР И ВОДОСТОК</a>
-                      <span class="submenu-icon" />
+                    <li class="
+                      submenu__links 
+                      {% if request.resolver_match.url_name == 'sett' %}active-submenu{% endif %} 
+                      {% if request.resolver_match.url_name == 'settPage' %}navigation-link-active{% endif %}
+                      ">
+                      <a href="{% url 'sett' %}">ТРОТУАРНАЯ ПЛИТКА, БОРДЮР И ВОДОСТОК</a>
+                      <span class="submenu-icon"></span>
                       <ul class="popup-menu">
                         <li class="popup-link"><a href="{% url 'sett' %}#vibropressovannaya">Вибропрессованая</a></li>
                         <li class="popup-link"><a href="{% url 'sett' %}#vibrolitaya">Вибролитая</a></li>
@@ -162,16 +165,25 @@
                         <li class="popup-link"><a href="{% url 'sett' %}#vodostok">Водосток</a></li>
                       </ul>
                     </li>
-                    <li class=" submenu__links {% if request.resolver_match.url_name == 'fence' %}active-submenu{% endif %}"><a href="{% url 'fence' %}">ЕВРОЗАБОР</a>
-                      <span class="submenu-icon" />
+                    <li class="
+                      submenu__links {% if request.resolver_match.url_name == 'fence' %}active-submenu{% endif %}
+                      {% if request.resolver_match.url_name == 'fencePage' %}navigation-link-active{% endif %}
+                      ">
+                      <a href="{% url 'fence' %}">ЕВРОЗАБОР</a>
+                      <span class="submenu-icon"></span>
                       <ul class="popup-menu">
                         <li class="popup-link"><a href="{% url 'fence' %}#glyancevyj">Глянцевый бетонный</a></li>
                         <li class="popup-link"><a href="{% url 'fence' %}#betonnyj">Бетонный</a></li>
                         <li class="popup-link"><a href="{% url 'fence' %}#stolby">Столбы бетонные</a></li>
                       </ul>
                     </li>
-                    <li class="submenu__links {% if request.resolver_match.url_name == 'brick' %}active-submenu{% endif %}"><a href="{% url 'brick' %}">КОЛОТЫЙ БЛОК И КИРПИЧ</a>
-                      <span class="submenu-icon" />
+                    <li class="
+                      submenu__links 
+                      {% if request.resolver_match.url_name == 'brick' %}active-submenu{% endif %}
+                      {% if request.resolver_match.url_name == 'brickPage' %}navigation-link-active{% endif %}
+                      ">
+                      <a href="{% url 'brick' %}">КОЛОТЫЙ БЛОК И КИРПИЧ</a>
+                      <span class="submenu-icon"></span>
                       <ul class="popup-menu">
                         <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-blok">Блок Облицовочный</a>
                         </li>
@@ -183,15 +195,23 @@
                             Облицовочный</a></li>
                       </ul>
                     </li>
-                    <li class="submenu__links {% if request.resolver_match.url_name == 'parapet' %}active-submenu{% endif %}"><a href="{% url 'parapet' %}">КРЫШКИ И ПАРАПЕТЫ</a>
-                      <span class="submenu-icon" />
+                    <li class="submenu__links 
+                      {% if request.resolver_match.url_name == 'parapet' %}active-submenu{% endif %}
+                      {% if request.resolver_match.url_name == 'parapetPage' %}navigation-link-active{% endif %}
+                      ">
+                      <a href="{% url 'parapet' %}">КРЫШКИ И ПАРАПЕТЫ</a>
+                      <span class="submenu-icon"></span>
                       <ul class="popup-menu">
                         <li class="popup-link"><a href="{% url 'parapet' %}#kryshki">Крышки</a></li>
                         <li class="popup-link"><a href="{% url 'parapet' %}#parapet">Парапеты</a></li>
                       </ul>
                     </li>
-                    <li class="submenu__links {% if request.resolver_match.url_name == 'monuments' %}active-submenu{% endif %}"><a href="{% url 'monuments' %}">ПАМЯТНИКИ</a>
-                      <span class="submenu-icon" />
+                    <li class="submenu__links 
+                      {% if request.resolver_match.url_name == 'monuments' %}active-submenu{% endif %}
+                      {% if request.resolver_match.url_name == 'monumentsPage' %}navigation-link-active{% endif %}
+                      ">
+                      <a href="{% url 'monuments' %}">ПАМЯТНИКИ</a>
+                      <span class="submenu-icon"></span>
                       <ul class="popup-menu">
                         <li class="popup-link"><a href="{% url 'monuments' %}#granitnye">Гранитные памятники</a>
                         </li>
@@ -216,6 +236,9 @@
           </aside>
 
           <main class="content">
+            {% comment %} <div class="up-wrapper"> {% endcomment %}
+              {% comment %} <div class="go-up">Вверх</div> {% endcomment %}
+              {% comment %} </div> {% endcomment %}
             {% block content %}
             Контент
             {% endblock content %}
@@ -228,8 +251,8 @@
         <div class="footer__row">
           <div class="footer__map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2252.6643797090883!2d35.28376216223628!3d47.822455577584876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x692a9f0aff452ff6!2z0KfQnyDQlNC20LDRgSDRgtGA0L7RgtGD0LDRgNC90LDRjyDQv9C70LjRgtC60LAg0LIg0JfQsNC_0L7RgNC-0LbRjNC1!5e0!3m2!1sru!2sua!4v1588963597703!5m2!1sru!2sua"
-              style='border: 0px;' />
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2680.617224102586!2d35.21667201519381!3d47.78886988336274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc5f8a8feee63d%3A0x94149ec834ee90a4!2z0KLQntCSICLQotCg0J7QotCj0JDQoCDQkdCj0JQi!5e0!3m2!1sru!2sua!4v1593539497973!5m2!1sru!2sua"
+              style='border: 0px;'></iframe>
           </div>
           <div class="footer__text-row">
             <div class="footer__menu">
@@ -245,7 +268,7 @@
             <address class="footer__address">
               <div class="footer__contacts">
                 <h3 class="footer-title">Контакты</h3>
-                <a href="mailto:pan2404@rambler.ru">pan2404@rambler.ru</a>
+                <a href="mailto:trotuar-bud@ukr.net">trotuar-bud@ukr.net</a>
                 <a href="tel:+380638086001">+38 (063) 808-60-01</a>
                 <a href="tel:+380675273100">+38 (067) 527-31-00</a>
                 <a href="tel:+380503419001">+38 (050) 341-90-01</a>
@@ -254,8 +277,7 @@
               <div class="footer__contacts">
                 <h3 class="footer-title">Адрес</h3>
                 <p>г. Запорожье</p>
-                <p>пос. Кременно 40</p>
-                <p>Мокрянский карьер № 2</p>
+                <p>ул. Космическая 119</p>
               </div>
             </address>
           </div>
@@ -269,12 +291,13 @@
     let siteSection = document.getElementsByClassName('site-section')[0]
     const menuToggler = () => {
       if (mobMenu.className.includes('mobile-nav_opened')) {
+        console.log('pressed')
         siteSection.style['overflow'] = 'hidden'
-
         mobMenu.className = 'mobile-nav'
         siteSection.className = 'site-section'
         siteSection.removeEventListener("touchstart", menuOff, false)
       } else {
+        console.log('pressed')
         siteSection.style['overflow'] = 'hidden'
         mobMenu.className += ' mobile-nav_opened'
         siteSection.className += ' site-section_mobile-nav'

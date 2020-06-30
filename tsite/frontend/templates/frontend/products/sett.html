@@ -12,6 +12,17 @@
 
 {% comment %} BODY {% endcomment %}
 {% block content %}
+<div class="go-up">Вверх</div>
+<div class="anch-menu">
+    <span>Тип</span>
+    <ul class="anch-menu__list">
+        {% if vibropressed %}<li class="anch-menu__item"><a href="#vibropressovannaya">Вибропрессованная</a></li>{% endif %}
+        {% if vibrocast %}<li class="anch-menu__item"><a href="#vibrolitaya">Вибролитая</a></li>{% endif %}
+        {% if borders %}<li class="anch-menu__item"><a href="#bordyur">Бордюр</a></li>{% endif %}
+        {% if gully %}<li class="anch-menu__item"><a href="#vodostok">Водосток</a></li>{% endif %}
+    </ul>
+</div>
+
 <section class="products">
     <h1 class="page-title">Тротуарная плитка <a href="{% url 'sett' %}#bordyur">Бордюр</a> и <a
             href="{% url 'sett' %}#vodostok">Водосток</a></h1>
@@ -67,5 +78,13 @@
 
 {% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
 {% include 'frontend/includes/pageDescription.html' %}
-
+<script>
+    document.getElementsByClassName('go-up')[0].onclick = () => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
+    }
+</script>
 {% endblock content %}
