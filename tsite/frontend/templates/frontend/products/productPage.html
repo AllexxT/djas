@@ -12,9 +12,10 @@
 {% endblock meta %}
 
 {% comment %} BODY {% endcomment %}
+{% block breadcrumbs %}
+{% include 'frontend/includes/breadcrumbsPage.html' %}
+{% endblock breadcrumbs %}
 {% block content %}
-
-
 <div class="pp">
     <div class="g-row">
         <div class="gallery">

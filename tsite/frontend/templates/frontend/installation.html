@@ -11,6 +11,16 @@
 {% endblock meta %}
 
 {% comment %} BODY {% endcomment %}
+{% block breadcrumbs %}
+<li class="breadcrumbs__item"><a href="{% url 'uslugi' %}">Услуги</a></li>
+{% if request.resolver_match.url_name == 'ukladka-plitki' %}
+    <li class="breadcrumbs__item"><a href="{% url 'ukladka-plitki' %}">Укладка тротуарной плитки</a></li>
+{% elif request.resolver_match.url_name == 'ustanovka-evrozabora' %}
+    <li class="breadcrumbs__item"><a href="{% url 'ustanovka-evrozabora' %}">Установка Еврозабора</a></li>
+{% elif request.resolver_match.url_name == 'ustanovka-pamyatnikov' %}
+    <li class="breadcrumbs__item"><a href="{% url 'ustanovka-pamyatnikov' %}">Установка памятников</a></li>
+{% endif %}
+{% endblock breadcrumbs %}
 {% block content %}
 <div class="installation-page">
     <h1 class="page-title">{{ title }}</h1>

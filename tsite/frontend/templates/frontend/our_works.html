@@ -20,6 +20,9 @@
 {% endblock meta %}
 
 {% comment %} BODY {% endcomment %}
+{% block breadcrumbs %}
+<li class="breadcrumbs__item"><a href="{% url 'our_works' %}">Наши Работы</a></li>
+{% endblock breadcrumbs %}
 {% block content %}
 
 <div class="exposition">

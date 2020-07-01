@@ -1,0 +1,11 @@
+{% if request.resolver_match.url_name == 'settPage' %}
+    <li class="breadcrumbs__item"><a href="{% url 'sett' %}">Тротуарная плитка</a></li>
+{% elif request.resolver_match.url_name == 'fencePage' %}
+    <li class="breadcrumbs__item"><a href="{% url 'fence' %}">Еврозабор</a></li>
+{% elif request.resolver_match.url_name == 'brickPage' %}
+    <li class="breadcrumbs__item"><a href="{% url 'brick' %}">Блок Кирпич</a></li>
+{% elif request.resolver_match.url_name == 'parapetPage' %}
+    <li class="breadcrumbs__item"><a href="{% url 'parapet' %}">Крышки Парапеты</a></li>
+{% elif request.resolver_match.url_name == 'monumentsPage' %}
+    <li class="breadcrumbs__item"><a href="{% url 'monuments' %}">Памятники</a></li>
+{% endif %}

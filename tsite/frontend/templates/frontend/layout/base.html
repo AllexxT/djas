@@ -222,8 +222,16 @@
                     </li>
                   </ul>
                 </li>
-                <li
-                  class="navigation-link {% if request.resolver_match.url_name == 'uslugi' %}navigation-link-active{% endif %}">
+                <li class="
+                  navigation-link 
+                  {% if request.resolver_match.url_name == 'uslugi' %}navigation-link-active{% endif %}
+                  {% if request.resolver_match.url_name == 'ukladka-plitki' %}navigation-link-active{% endif %}
+                  {% if request.resolver_match.url_name == 'ustanovka-evrozabora' %}navigation-link-active{% endif %}
+                  {% if request.resolver_match.url_name == 'ustanovka-pamyatnikov' %}navigation-link-active{% endif %}
+                  {% if request.resolver_match.url_name == 'dostavka' %}navigation-link-active{% endif %}
+                  {% if request.resolver_match.url_name == 'zamer' %}navigation-link-active{% endif %}
+
+                  ">
                   <a href="{% url 'uslugi' %}">НАШИ УСЛУГИ</a></li>
                 <li
                   class="navigation-link {% if request.resolver_match.url_name == 'sertificates' %}navigation-link-active{% endif %}">

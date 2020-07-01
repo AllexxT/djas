@@ -11,6 +11,9 @@
 {% endblock meta %}
 
 {% comment %} body {% endcomment %}
+{% block breadcrumbs %}
+<li class="breadcrumbs__item"><a href="{% url 'sertificates' %}">Сертификаты</a></li>
+{% endblock breadcrumbs %}
 {% block content %}
 <div class="wrapper">
     <h1 class="page-title">Сертификаты

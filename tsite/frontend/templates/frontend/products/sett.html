@@ -11,12 +11,16 @@
 {% endblock meta %}
 
 {% comment %} BODY {% endcomment %}
+{% block breadcrumbs %}
+<li class="breadcrumbs__item"><a href="{% url 'sett' %}">Тротуарная плитка</a></li>
+{% endblock breadcrumbs %}
 {% block content %}
 <div class="go-up">Вверх</div>
 <div class="anch-menu">
     <span>Тип</span>
     <ul class="anch-menu__list">
-        {% if vibropressed %}<li class="anch-menu__item"><a href="#vibropressovannaya">Вибропрессованная</a></li>{% endif %}
+        {% if vibropressed %}<li class="anch-menu__item"><a href="#vibropressovannaya">Вибропрессованная</a></li>
+        {% endif %}
         {% if vibrocast %}<li class="anch-menu__item"><a href="#vibrolitaya">Вибролитая</a></li>{% endif %}
         {% if borders %}<li class="anch-menu__item"><a href="#bordyur">Бордюр</a></li>{% endif %}
         {% if gully %}<li class="anch-menu__item"><a href="#vodostok">Водосток</a></li>{% endif %}
@@ -80,11 +84,11 @@
 {% include 'frontend/includes/pageDescription.html' %}
 <script>
     document.getElementsByClassName('go-up')[0].onclick = () => {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
     }
 </script>
 {% endblock content %}

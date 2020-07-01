@@ -24,7 +24,6 @@ class ProductCardAdmin(admin.ModelAdmin):
 
     fields = (
         'name',
-        'URLname',
         'position',
         'article',
         'discount',
@@ -36,7 +35,6 @@ class ProductCardAdmin(admin.ModelAdmin):
     )
     list_display = (
         'name',
-        'URLname',
         'position',
         'article',
         # 'description',
