@@ -31,7 +31,7 @@
 
 .company .company__numbers .company__phone img { width: 45pt; }
 
-.company .company__digits { align-self: center; display: flex; flex-flow: column; height: 73%; justify-content: space-around; }
+.company .company__digits { display: flex; flex-flow: column; height: 73%; }
 
 .company .company__digits li { height: 100%; display: flex; }
 

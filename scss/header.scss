@@ -71,11 +71,9 @@ $base-container: 1310px;
         }
     }
     & .company__digits {
-        align-self: center;
         display: flex;
         flex-flow: column;
         height: 73%;
-        justify-content: space-around;
         li {
             height: 100%;
             display: flex;
