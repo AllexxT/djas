@@ -6,22 +6,22 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('trotuarnaya-plitka-bordyur-zaporozhe/', views.sett, name='sett'),
-    path('trotuarnaya-plitka-bordyur-zaporozhe/<str:pk>', views.productPage, name='settPage'),
+    path('trotuarnaya-plitka-bordyur-zaporozhe/<str:slug>', views.productPage, name='settPage'),
     path('products/6-Trotuarnaya-plitka-Bordyur/', RedirectView.as_view(pattern_name="sett", permanent=True)),
 
     path('evrozabory-glyancevye-zaporozhe/', views.fence, name='fence'),
-    path('evrozabory-glyancevye-zaporozhe/<str:pk>', views.productPage, name='fencePage'),
+    path('evrozabory-glyancevye-zaporozhe/<str:slug>', views.productPage, name='fencePage'),
     path('products/8-Evrozabory/', RedirectView.as_view(pattern_name="fence", permanent=True)),
 
     path('blok-kirpich-oblitsovochnyj-dekorativnyj/', views.brick, name='brick'),
-    path('blok-kirpich-oblitsovochnyj-dekorativnyj/<str:pk>', views.productPage, name='brickPage'),
+    path('blok-kirpich-oblitsovochnyj-dekorativnyj/<str:slug>', views.productPage, name='brickPage'),
     path('products/9-Kirpich-i-blok-kolotyy-dekorativnyy/', RedirectView.as_view(pattern_name="brick", permanent=True)),
 
     path('parapety-kryshki-v-zaporozhe/', views.parapet, name='parapet'),
-    path('parapety-kryshki-v-zaporozhe/<str:pk>', views.productPage, name='parapetPage'),
+    path('parapety-kryshki-v-zaporozhe/<str:slug>', views.productPage, name='parapetPage'),
 
     path('pamyatniki-i-otmostki-zaporozhe/', views.monuments, name='monuments'),
-    path('pamyatniki-i-otmostki-zaporozhe/<str:pk>', views.productPage, name='monumentsPage'),
+    path('pamyatniki-i-otmostki-zaporozhe/<str:slug>', views.productPage, name='monumentsPage'),
     path('products/7-Pamyatniki-i-otmostki/', RedirectView.as_view(pattern_name="monuments", permanent=True)),
 
     # !

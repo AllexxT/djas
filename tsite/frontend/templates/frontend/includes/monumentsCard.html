@@ -3,7 +3,7 @@
 <div class="card">
     <div class="card__content monument-image">
         <div class="monument-image__animation">
-            <a href="{{card.pk}}" class="card__image">
+            <a href="{{card.slug}}" class="card__image">
                 <img class="monument-image__picture"
                     src="/media/{{card.photos.0.photo|default:'static/images/placeholder.jpeg'}}" alt="{{card.name}} Выгодная цена в Запорожье и области">
             </a>
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="card__name">
-        <a href="">{{card.name}}</a>
+        <a href="{{card.slug}}">{{card.name}}</a>
     </div>
     <div class="card__old-price">
         <span>
@@ -35,5 +35,5 @@
         <span style="color: #535353;">Нет информации</span>
         {% endif %}
     </div>
-    <div class="card__button"><a href="{{card.pk}}">подробнее</a></div>
+    <div class="card__button"><a href="{{card.slug}}">подробнее</a></div>
 </div>

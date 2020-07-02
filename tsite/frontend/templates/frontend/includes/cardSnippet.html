@@ -2,7 +2,7 @@
 
 <div class="card">
     <div class="card__content">
-        <a href="{{card.pk}}" class="card__image">
+        <a href="{{card.slug}}" class="card__image">
             {% if card.photos.0.photo.crop.300x300 %}
             <img src="{{card.photos.0.photo.crop.300x300}}" alt="{{card.name}} Купить в Запорожье">
             {% else %}
@@ -18,7 +18,7 @@
         </a>
     </div>
     <div class="card__name">
-        <a href="{{card.pk}}">{{card.name}}</a>
+        <a href="{{card.slug}}">{{card.name}}</a>
     </div>
     <div class="card__old-price">
         <span>
@@ -36,5 +36,5 @@
         <span style="color: #535353;">Нет информации</span>
         {% endif %}
     </div>
-    <div class="card__button"><a href="{{card.pk}}">подробнее</a></div>
+    <div class="card__button"><a href="{{card.slug}}">подробнее</a></div>
 </div>

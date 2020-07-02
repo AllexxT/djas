@@ -35,6 +35,7 @@ class ProductCardAdmin(admin.ModelAdmin):
     )
     list_display = (
         'name',
+        'slug',
         'position',
         'article',
         # 'description',

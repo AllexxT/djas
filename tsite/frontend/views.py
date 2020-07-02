@@ -126,8 +126,8 @@ def monuments(request):
     )
 
 
-def productPage(request, pk):
-    product = ProductCard.objects.get(pk=pk)
+def productPage(request, slug):
+    product = ProductCard.objects.get(slug=slug)
     return render(
         request,
         'frontend/products/productPage.html',

@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
+from uuslug import uuslug
 from versatileimagefield.fields import VersatileImageField, PPOIField
 from datetime import date
 from django.urls import reverse
@@ -84,6 +85,16 @@ class ProductCard(models.Model):
     seoDescription = models.TextField(
         'СЕО описание страницы с товаром(скрытое)', null=True, blank=True)
     keywords = models.TextField('СЕО ключевые слова', null=True, blank=True)
+
+# UUSLUG
+    slug = models.CharField(max_length=200, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = uuslug(self.name, instance=self)
+        super(ProductCard, self).save(*args, **kwargs)
 
     # Return lower price from the all colors of product
     # (if "depthPrice" is empty)

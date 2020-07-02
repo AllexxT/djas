@@ -73,6 +73,7 @@ webencodings = "==0.5.1"
 widgetsnbextension = "==3.5.1"
 zipp = "==3.1.0"
 django-livereload-server = "*"
+django-uuslug = "*"
 
 [dev-packages]
 pylint = "*"
