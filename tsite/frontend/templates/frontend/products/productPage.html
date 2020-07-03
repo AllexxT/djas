@@ -7,7 +7,7 @@
 {% block meta %}
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/productPage.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/gallery.css' %}">
-<meta name="description" content="{{ product.seoDescription | default:'hello' }}">
+<meta name="description" content="{{ product.seoDescription }}">
 <meta name="keywords" content="{{ product.keywords }}">
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
