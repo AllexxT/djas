@@ -33,7 +33,7 @@
   <link rel="manifest" href="{% static 'icons/manifest.json' %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="{% static 'icons/ms-icon-144x144.png' %}">
-  <style type="text/css">
+  {% comment %} <style type="text/css">
     #hellopreloader_preload {
       display: block;
       position: fixed;
@@ -46,11 +46,11 @@
       background: rgba(56, 56, 68, 1) url(http://hello-site.ru//main/images/preloads/spinning-circles.svg) center center no-repeat;
       background-size: 41px;
     }
-  </style>
+  </style> {% endcomment %}
 </head>
 
 <body>
-  <div id="hellopreloader">
+  {% comment %} <div id="hellopreloader">
     <div id="hellopreloader_preload"></div>
   </div>
   <script>
@@ -68,7 +68,7 @@
         fadeOutnojquery(hellopreloader)
       }, 200)
     };
-  </script>
+  </script> {% endcomment %}
   <div class="mobile-nav">
     <div class="mobile-nav__content">
       <ul class="mobile-nav__list">
