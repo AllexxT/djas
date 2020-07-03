@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic.base import RedirectView
 from . import views
 
@@ -7,15 +7,17 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('trotuarnaya-plitka-bordyur-zaporozhe/', views.sett, name='sett'),
     path('trotuarnaya-plitka-bordyur-zaporozhe/<str:slug>', views.productPage, name='settPage'),
-    path('products/6-Trotuarnaya-plitka-Bordyur/', RedirectView.as_view(pattern_name="sett", permanent=True)),
+    re_path(r'^products/6-Trotuarnaya-plitka-Bordyur/.*$', RedirectView.as_view(pattern_name="sett", permanent=True)),
+    re_path(r'^products/6-Trotuarnaya-plitka/.*$', RedirectView.as_view(pattern_name="sett", permanent=True)),
 
     path('evrozabory-glyancevye-zaporozhe/', views.fence, name='fence'),
     path('evrozabory-glyancevye-zaporozhe/<str:slug>', views.productPage, name='fencePage'),
-    path('products/8-Evrozabory/', RedirectView.as_view(pattern_name="fence", permanent=True)),
+    re_path(r'^products/8-Evrozabory/.*$', RedirectView.as_view(pattern_name="fence", permanent=True)),
 
     path('blok-kirpich-oblitsovochnyj-dekorativnyj/', views.brick, name='brick'),
     path('blok-kirpich-oblitsovochnyj-dekorativnyj/<str:slug>', views.productPage, name='brickPage'),
     path('products/9-Kirpich-i-blok-kolotyy-dekorativnyy/', RedirectView.as_view(pattern_name="brick", permanent=True)),
+    path('products/9-Kirpich-i-blok-kolotyy/', RedirectView.as_view(pattern_name="brick", permanent=True)),
 
     path('parapety-kryshki-v-zaporozhe/', views.parapet, name='parapet'),
     path('parapety-kryshki-v-zaporozhe/<str:slug>', views.productPage, name='parapetPage'),
