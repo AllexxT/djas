@@ -1,4 +1,1 @@
-@charset "UTF-8";
-.main-row { display: flex; }
-
-.content { flex-grow: 1; margin-top: 15px; max-width: 1420px; /* Должно помочь с сжиманием меню контентной частью страницы fence*/ }
+.main-row{display:flex}.content{flex-grow:1;margin-top:15px;max-width:1420px}

@@ -5,6 +5,7 @@ from uuslug import uuslug
 from versatileimagefield.fields import VersatileImageField, PPOIField
 from datetime import date
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 ##############################################################################
 
@@ -28,7 +29,7 @@ class Page(models.Model):
         "СЕО Описание(скрытое)", blank=True, null=True)
     keywords = models.TextField(
         "СЕО Ключевые слова", blank=True, null=True)
-    body = models.TextField(
+    body = RichTextField(
         "Текст на странице", blank=True, null=True)
 
     def keywordsLength(self):
@@ -75,11 +76,12 @@ class ProductCard(models.Model):
     owner = models.ForeignKey(
         User, related_name="Description", on_delete=models.CASCADE, null=True)
     name = models.CharField('Название', max_length=200, unique=True)
-    description = models.TextField(
+    description = RichTextField(
         'Описание на странице', null=True, blank=True)
     discount = models.BooleanField('Скидка', blank=True)
     sertificate = models.BooleanField('Сертификат', blank=True, default=False)
-    sizes = models.TextField(max_length=400, null=True, blank=True)
+    sizes = RichTextField(max_length=400, null=True,
+                          blank=True, config_name='mini')
     position = models.FloatField(
         'Позиция товара в списке товаров', blank=True, null=True, default=0)
     seoDescription = models.TextField(
@@ -207,7 +209,7 @@ class News(models.Model):
     )
 
     title = models.CharField(max_length=100, null=True)
-    body = models.TextField(max_length=500, null=True, blank=True)
+    body = RichTextField(max_length=500, null=True, blank=True)
     changed = models.DateTimeField(auto_now=True, blank=True)
     created = models.DateField(auto_now_add=True, blank=True)
 
