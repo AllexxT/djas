@@ -23,8 +23,8 @@
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Новости и Новинки",
-            },
+                "name": "Новости и Новинки"
+            }
         ]
     }
 </script>
@@ -42,13 +42,15 @@
         <div class="news-item">
             <div class="news-item__row">
                 <a href="{{ newsItem.productUrl }}{{ newsItem.product.slug }}" class="card">
-                    <img src="{{ newsItem.product.photos.0.photo.crop.300x300 }}" alt="{{newsItem.product.name}} купить в Запорожье">
+                    <img src="{{ newsItem.product.photos.0.photo.crop.300x300 }}"
+                        alt="{{newsItem.product.name}} купить в Запорожье">
                     {% if newsItem.product.sertificate %}
                     <img class="card__sertificat" src="{% static 'images/sertificated-product.png' %}"
                         alt="Сертификат качества">
                     {% endif %}
                     {% if newsItem.product.discount %}
-                    <img class="card__discount" src="{% static 'images/skidka-trotuar-bud.png' %}" alt="Скидка на товар">
+                    <img class="card__discount" src="{% static 'images/skidka-trotuar-bud.png' %}"
+                        alt="Скидка на товар">
                     {% endif %}
                 </a>
                 <div class="news-item__content">
