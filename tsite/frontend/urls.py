@@ -5,9 +5,12 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('products/c-ex.html', RedirectView.as_view(pattern_name="index", permanent=True)),
+    
     path('trotuarnaya-plitka-bordyur-zaporozhe/', views.sett, name='sett'),
     path('trotuarnaya-plitka-bordyur-zaporozhe/<str:slug>', views.productPage, name='settPage'),
     re_path(r'^products/6-Trotuarnaya-plitka-Bordyur/.*$', RedirectView.as_view(pattern_name="sett", permanent=True)),
+    re_path(r'^products/6-Trotuarnaya-plitka-i-Bordyur/.*$', RedirectView.as_view(pattern_name="sett", permanent=True)),
     re_path(r'^products/6-Trotuarnaya-plitka/.*$', RedirectView.as_view(pattern_name="sett", permanent=True)),
 
     path('evrozabory-glyancevye-zaporozhe/', views.fence, name='fence'),
@@ -16,15 +19,15 @@ urlpatterns = [
 
     path('blok-kirpich-oblitsovochnyj-dekorativnyj/', views.brick, name='brick'),
     path('blok-kirpich-oblitsovochnyj-dekorativnyj/<str:slug>', views.productPage, name='brickPage'),
-    path('products/9-Kirpich-i-blok-kolotyy-dekorativnyy/', RedirectView.as_view(pattern_name="brick", permanent=True)),
-    path('products/9-Kirpich-i-blok-kolotyy/', RedirectView.as_view(pattern_name="brick", permanent=True)),
+    re_path(r'products/9-Kirpich-i-blok-kolotyy-dekorativnyy/.*$', RedirectView.as_view(pattern_name="brick", permanent=True)),
+    re_path(r'products/9-Kirpich-i-blok-kolotyy/.*$', RedirectView.as_view(pattern_name="brick", permanent=True)),
 
     path('parapety-kryshki-v-zaporozhe/', views.parapet, name='parapet'),
     path('parapety-kryshki-v-zaporozhe/<str:slug>', views.productPage, name='parapetPage'),
 
     path('pamyatniki-i-otmostki-zaporozhe/', views.monuments, name='monuments'),
     path('pamyatniki-i-otmostki-zaporozhe/<str:slug>', views.productPage, name='monumentsPage'),
-    path('products/7-Pamyatniki-i-otmostki/', RedirectView.as_view(pattern_name="monuments", permanent=True)),
+    re_path(r'products/7-Pamyatniki-i-otmostki/.*$', RedirectView.as_view(pattern_name="monuments", permanent=True)),
 
     # !
     path('novosti/', views.news, name='news'),

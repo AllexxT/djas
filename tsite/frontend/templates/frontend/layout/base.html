@@ -33,6 +33,19 @@
   <link rel="manifest" href="{% static 'icons/manifest.json' %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="{% static 'icons/ms-icon-144x144.png' %}">
+  {% block ldJson %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ТОВАРЫ",
+      }, ]
+    }
+  </script>
+  {% endblock ldJson %}
   {% comment %} <style type="text/css">
     #hellopreloader_preload {
       display: block;
@@ -135,11 +148,11 @@
     </header>
     <div class="navigation-block">
       <div class="container">
-        <ul class="breadcrumbs">
+        <ol class="breadcrumbs">
           <li class="breadcrumbs__item"><a href="{% url 'index' %}">ТОВАРЫ</a></li>
           {% block breadcrumbs %}
           {% endblock breadcrumbs %}
-        </ul>
+        </ol>
         <div class="main-row">
           <aside class="menu">
             <nav class="navigation">

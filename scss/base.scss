@@ -74,12 +74,21 @@ section.description {
         padding-bottom: 15px;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
+    & ul li,
     & ul li {
         list-style: inside;
         font-weight: bold;
     }
-    ul {
+    ul,
+    ol {
         margin-bottom: 10px;
+        padding-left: 5%;
+    }
+    p {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
     }
 }
 
@@ -129,7 +138,7 @@ section.description {
     &:after {
         content: "";
         top: 0px;
-        left: 27px;
+        left: 26px;
         position: absolute;
         border: 15px solid transparent;
         border-right-width: 0;
@@ -154,7 +163,7 @@ section.description {
     background: rgba(82, 82, 82, 0.8);
     a {
         display: block;
-    } 
+    }
 }
 
 .anch-menu__item {
@@ -175,6 +184,6 @@ section.description {
         text-transform: uppercase;
         height: 100%;
         width: 100%;
-          padding: 10px;
+        padding: 10px;
     }
 }

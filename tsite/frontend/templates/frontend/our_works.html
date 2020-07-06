@@ -11,14 +11,31 @@
 <meta name="keywords" content="{{ product.keywords }}">
 
 
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 {% comment %} <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> {% endcomment %}
-
-
-
 {% endblock meta %}
+{% block ldJson %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ТОВАРЫ",
+                "item": "https://trotuar-bud.zp.ua/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Наши Работы",
+            }
+        ]
+    }
+</script>
+{% endblock ldJson %}
 
 {% comment %} BODY {% endcomment %}
 {% block breadcrumbs %}

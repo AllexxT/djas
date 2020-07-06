@@ -9,6 +9,31 @@
 <meta name="description" content="{{ seo.description }}">
 <meta name="keywords" content="{{ seo.keywords }}">
 {% endblock meta %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ТОВАРЫ",
+                "item": "https://trotuar-bud.zp.ua/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Наши услуги",
+                "item": "http://localhost:8000/nashi-uslugi/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{% if request.resolver_match.url_name == 'ukladka-plitki' %}Укладка тротуарной плитки{% elif request.resolver_match.url_name == 'ustanovka-evrozabora' %}Установка Еврозабора{% elif request.resolver_match.url_name == 'ustanovka-pamyatnikov' %}Установка Памятников{% endif %}",
+            },
+        ]
+    }
+</script>
+{% endblock ldJson %}
 
 {% comment %} BODY {% endcomment %}
 {% block breadcrumbs %}

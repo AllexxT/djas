@@ -9,6 +9,32 @@
 <meta name="description" content="{{ seo.description }}">
 <meta name="keywords" content="{{ seo.keywords }}">
 {% endblock meta %}
+{% block ldJson %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ТОВАРЫ",
+                "item": "https://trotuar-bud.zp.ua/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Наши услуги",
+                "item": "https://trotuar-bud.zp.ua/nashi-uslugi/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Доставка манипулятором",
+            },
+        ]
+    }
+</script>
+{% endblock ldJson %}
 
 {% comment %} BODY {% endcomment %}
 {% block breadcrumbs %}
@@ -32,7 +58,8 @@
     </div>
     <div class="manipulators">
         <div class="manipulators__item">
-            <div class="manipulators__photo"><img src="{% static 'images/placeholder.jpeg' %}" alt="Манипулятор пять тонн"></div>
+            <div class="manipulators__photo"><img src="{% static 'images/placeholder.jpeg' %}"
+                    alt="Манипулятор пять тонн"></div>
             <div class="manipulators__label">
                 <h4>Манипулятор 5 т</h4>
                 <p>Доставка</p>
@@ -40,14 +67,16 @@
         </div>
         <div class="manipulators__item">
             <div class="manipulators__photo"><img
-                    src="{% static 'images/dostavka-manipulyator-zaporozhe-s-nds-trotuar-bud.jpg' %}" alt="Манипулятор 15 тонн"></div>
+                    src="{% static 'images/dostavka-manipulyator-zaporozhe-s-nds-trotuar-bud.jpg' %}"
+                    alt="Манипулятор 15 тонн"></div>
             <div class="manipulators__label">
                 <h4>Манипулятор 15 т</h4>
                 <p>Доставка</p>
             </div>
         </div>
         <div class="manipulators__item">
-            <div class="manipulators__photo"><img src="{% static 'images/placeholder.jpeg' %}" alt="Манипулятор 25 тонн"></div>
+            <div class="manipulators__photo"><img src="{% static 'images/placeholder.jpeg' %}"
+                    alt="Манипулятор 25 тонн"></div>
             <div class="manipulators__label">
                 <h4>Манипулятор 25 т</h4>
                 <p>Доставка</p>
@@ -55,7 +84,7 @@
         </div>
     </div>
     {% include 'frontend/includes/services-info.html' %}
-    <div class="buy"><a href="{% url 'sett' %}">КУПИТЬ ТРОТУАРНУЮ ПЛИТКУ В ЗАПОРОЖЬЕ    </a></div>
+    <div class="buy"><a href="{% url 'sett' %}">КУПИТЬ ТРОТУАРНУЮ ПЛИТКУ В ЗАПОРОЖЬЕ </a></div>
 </div>
 {% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
 {% include 'frontend/includes/pageDescription.html' %}

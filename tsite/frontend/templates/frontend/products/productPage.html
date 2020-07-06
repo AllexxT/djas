@@ -12,6 +12,32 @@
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 {% endblock meta %}
+{% block ldJson %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ТОВАРЫ",
+                "item": "https://trotuar-bud.zp.ua/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{% if request.resolver_match.url_name == 'settPage' %}Тротуарная плитка{% elif request.resolver_match.url_name == 'fencePage' %}Еврозабор{% elif request.resolver_match.url_name == 'brickPage' %}Колотый блок кирпич{% elif request.resolver_match.url_name == 'parapetPage' %}Крышки и Парапеты{% elif request.resolver_match.url_name == 'monumentsPage' %}Памятники{% endif %}",
+                "item": "{% if request.resolver_match.url_name == 'settPage' %}https://trotuar-bud.zp.ua{% url 'sett' %}{% elif request.resolver_match.url_name == 'fencePage' %}https://trotuar-bud.zp.ua{% url 'fence' %}{% elif request.resolver_match.url_name == 'brickPage' %}https://trotuar-bud.zp.ua{% url 'brick' %}{% elif request.resolver_match.url_name == 'parapetPage' %}https://trotuar-bud.zp.ua{% url 'parapet' %}{% elif request.resolver_match.url_name == 'monumentsPage' %}https://trotuar-bud.zp.ua{% url 'monuments' %}{% endif %}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{product.name}}",
+            },
+        ]
+    }
+</script>
+{% endblock ldJson %}
 
 {% comment %} BODY {% endcomment %}
 {% block breadcrumbs %}

@@ -10,6 +10,26 @@
 <meta name="description" content="{{ seo.description }}">
 <meta name="keywords" content="{{ seo.keywords }}">
 {% endblock meta %}
+{% block ldJson %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ТОВАРЫ",
+            "item": "https://trotuar-bud.zp.ua/"
+        }, 
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Блок и Кирпич",
+        }, 
+        ]
+    }
+</script>
+{% endblock ldJson %}
 
 {% comment %} BODY {% endcomment %}
 {% block breadcrumbs %}
@@ -23,7 +43,8 @@
         {% if facblock %}<li class="anch-menu__item"><a href="#oblicovochnyj-blok">Облицовочный Блок</a></li>{% endif %}
         {% if baseblock %}<li class="anch-menu__item"><a href="#fundamentnyj-blok">Фундаментный Блок</a></li>{% endif %}
         {% if buildblock %}<li class="anch-menu__item"><a href="#stroitelnyj-blok">Строительный Блок</a></li>{% endif %}
-        {% if facbrick %}<li class="anch-menu__item"><a href="#oblicovochnyj-kirpich">Облицовочный Кирпич</a></li>{% endif %}
+        {% if facbrick %}<li class="anch-menu__item"><a href="#oblicovochnyj-kirpich">Облицовочный Кирпич</a></li>
+        {% endif %}
     </ul>
 </div>
 
@@ -84,11 +105,11 @@
 {% include 'frontend/includes/pageDescription.html' %}
 <script>
     document.getElementsByClassName('go-up')[0].onclick = () => {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        })
     }
 </script>
 {% endblock content %}
