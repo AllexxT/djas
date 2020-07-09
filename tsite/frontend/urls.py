@@ -28,6 +28,7 @@ urlpatterns = [
     path('pamyatniki-i-otmostki-zaporozhe/', views.monuments, name='monuments'),
     path('pamyatniki-i-otmostki-zaporozhe/<str:slug>', views.productPage, name='monumentsPage'),
     re_path(r'products/7-Pamyatniki-i-otmostki/.*$', RedirectView.as_view(pattern_name="monuments", permanent=True)),
+    re_path(r'products/7-Pamyatniki/.*$', RedirectView.as_view(pattern_name="monuments", permanent=True)),
 
     # !
     path('novosti/', views.news, name='news'),
