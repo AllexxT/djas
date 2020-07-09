@@ -138,7 +138,7 @@ section.description {
     &:after {
         content: "";
         top: 0px;
-        left: 26px;
+        left: 100%;
         position: absolute;
         border: 15px solid transparent;
         border-right-width: 0;
@@ -147,7 +147,7 @@ section.description {
     &:hover {
         visibility: hidden;
         width: auto;
-        ul {
+        ol {
             visibility: visible;
             left: unset;
             z-index: 1;

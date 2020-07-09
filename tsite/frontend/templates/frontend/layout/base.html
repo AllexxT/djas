@@ -156,7 +156,7 @@
         <div class="main-row">
           <aside class="menu">
             <nav class="navigation">
-              <ul>
+              <ol>
                 <li
                   class="navigation-link {% if request.resolver_match.url_name == 'news' %}navigation-link-active{% endif %}">
                   <a href="{% url 'news' %}">НОВОСТИ</a></li>
@@ -164,7 +164,7 @@
                   class="navigation-link {% if request.resolver_match.url_name == 'index' %}navigation-link-active{% endif %}">
                   <a href="/">ТОВАРЫ</a></li>
                 <li>
-                  <ul class="navigation__submenu">
+                  <ol class="navigation__submenu">
                     <li class="
                       submenu__links 
                       {% if request.resolver_match.url_name == 'sett' %}active-submenu{% endif %} 
@@ -172,12 +172,12 @@
                       ">
                       <a href="{% url 'sett' %}">ТРОТУАРНАЯ ПЛИТКА, БОРДЮР И ВОДОСТОК</a>
                       <span class="submenu-icon"></span>
-                      <ul class="popup-menu">
+                      <ol class="popup-menu">
                         <li class="popup-link"><a href="{% url 'sett' %}#vibropressovannaya">Вибропрессованая</a></li>
                         <li class="popup-link"><a href="{% url 'sett' %}#vibrolitaya">Вибролитая</a></li>
                         <li class="popup-link"><a href="{% url 'sett' %}#bordyur">Бордюр</a></li>
                         <li class="popup-link"><a href="{% url 'sett' %}#vodostok">Водосток</a></li>
-                      </ul>
+                      </ol>
                     </li>
                     <li class="
                       submenu__links {% if request.resolver_match.url_name == 'fence' %}active-submenu{% endif %}
@@ -185,11 +185,11 @@
                       ">
                       <a href="{% url 'fence' %}">ЕВРОЗАБОР</a>
                       <span class="submenu-icon"></span>
-                      <ul class="popup-menu">
+                      <ol class="popup-menu">
                         <li class="popup-link"><a href="{% url 'fence' %}#glyancevyj">Глянцевый бетонный</a></li>
                         <li class="popup-link"><a href="{% url 'fence' %}#betonnyj">Бетонный</a></li>
                         <li class="popup-link"><a href="{% url 'fence' %}#stolby">Столбы бетонные</a></li>
-                      </ul>
+                      </ol>
                     </li>
                     <li class="
                       submenu__links 
@@ -198,7 +198,7 @@
                       ">
                       <a href="{% url 'brick' %}">КОЛОТЫЙ БЛОК И КИРПИЧ</a>
                       <span class="submenu-icon"></span>
-                      <ul class="popup-menu">
+                      <ol class="popup-menu">
                         <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-blok">Блок Облицовочный</a>
                         </li>
                         <li class="popup-link"><a href="{% url 'brick' %}#fundamentnyj-blok">Фундаментный блок</a>
@@ -207,7 +207,7 @@
                         </li>
                         <li class="popup-link"><a href="{% url 'brick' %}#oblicovochnyj-kirpich">Кирпич
                             Облицовочный</a></li>
-                      </ul>
+                      </ol>
                     </li>
                     <li class="submenu__links 
                       {% if request.resolver_match.url_name == 'parapet' %}active-submenu{% endif %}
@@ -215,10 +215,10 @@
                       ">
                       <a href="{% url 'parapet' %}">КРЫШКИ И ПАРАПЕТЫ</a>
                       <span class="submenu-icon"></span>
-                      <ul class="popup-menu">
+                      <ol class="popup-menu">
                         <li class="popup-link"><a href="{% url 'parapet' %}#kryshki">Крышки</a></li>
                         <li class="popup-link"><a href="{% url 'parapet' %}#parapet">Парапеты</a></li>
-                      </ul>
+                      </ol>
                     </li>
                     <li class="submenu__links 
                       {% if request.resolver_match.url_name == 'monuments' %}active-submenu{% endif %}
@@ -226,15 +226,15 @@
                       ">
                       <a href="{% url 'monuments' %}">ПАМЯТНИКИ</a>
                       <span class="submenu-icon"></span>
-                      <ul class="popup-menu">
+                      <ol class="popup-menu">
                         <li class="popup-link"><a href="{% url 'monuments' %}#granitnye">Гранитные памятники</a>
                         </li>
                         <li class="popup-link"><a href="{% url 'monuments' %}#betonnye">Бетонные памятники</a></li>
                         <li class="popup-link"><a href="{% url 'monuments' %}#otmostka">Отмостка</a></li>
                         <li class="popup-link"><a href="{% url 'monuments' %}#tablichki">Овалы и таблички</a></li>
-                      </ul>
+                      </ol>
                     </li>
-                  </ul>
+                  </ol>
                 </li>
                 <li class="
                   navigation-link 
@@ -253,7 +253,7 @@
                 <li
                   class="navigation-link {% if request.resolver_match.url_name == 'our_works' %}navigation-link-active{% endif %}""><a href="
                   {% url 'our_works' %}">НАШИ РАБОТЫ</a></li>
-              </ul>
+              </ol>
             </nav>
           </aside>
 

@@ -9,6 +9,9 @@ aside.menu {
 
 .navigation {
     height: 100%;
+    ol {
+        list-style: none;
+    }
 }
 .navigation-link {
     position: relative;
@@ -39,7 +42,7 @@ aside.menu {
         display: flex;
         justify-content: space-between;
     }
-    a:hover + span + ul {
+    a:hover + span + ol {
         display: block;
     }
     a:hover + span {
