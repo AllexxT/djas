@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/*Обнуление*/
+/* line 3, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* line 8, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+:focus, :active {
+  outline: none;
+}
+
+/* line 14, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+a:focus, a:active {
+  outline: none;
+}
+
+/* line 16, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+nav, footer, header, aside {
+  display: block;
+}
+
+/* line 18, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 28, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+input, button, textarea {
+  font-family: inherit;
+}
+
+/* line 30, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+input::-ms-clear {
+  display: none;
+}
+
+/* line 31, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+button {
+  cursor: pointer;
+}
+
+/* line 32, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 33, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+a, a:visited {
+  text-decoration: none;
+}
+
+/* line 34, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 35, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+ul li {
+  list-style: none;
+}
+
+/* line 36, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+img {
+  vertical-align: top;
+}
+
+/* line 38, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* line 41, ../../projects/djas/tsite/frontend/static/frontend/scss/style.scss */
+.bigred {
+  font-size: 20px;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

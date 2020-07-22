@@ -1,1 +1,31 @@
-.wrapper{display:flex;flex:1 1 auto;flex-direction:column}.services{display:flex;flex-wrap:wrap}@media (max-width: 800px){.services{justify-content:center}}.services__item{display:flex;flex-direction:column;justify-content:space-between;flex:0 1 25%;padding:0 15px 15px 15px}@media (max-width: 800px){.services__item{flex:0 0 50%;padding:0 7px 7px 7px}}@media (max-width: 450px){.services__item{flex:1 1 40%;padding:0 7px 7px 7px}}.services__item:nth-child(3) img{width:75%}@media (max-width: 390px){.services__item:nth-child(3) img{width:100%}}.services__image-block{text-align:center}.services__image-block a{display:inline-block;max-height:190px;overflow:hidden}.services__image-block a img{height:100%;width:100%;object-fit:contain}.services__button-block{display:flex;justify-content:center;margin:15px auto 20px auto}.services__button-block a{display:flex;justify-content:center;border:2px solid #383844;padding:0 10px;font-weight:bold;color:#333333;transition:all 0.2s linear}.services__button-block a span{padding:10px 0 10px 0;text-align:center}.services__button-block a:hover{background:#383844}.services__button-block a:hover span{color:#f5cb55}
+.wrapper { display: flex; flex: 1 1 auto; flex-direction: column; }
+
+.services { display: flex; flex-wrap: wrap; /* align-items: flex-end; */ }
+
+@media (max-width: 800px) { .services { justify-content: center; } }
+
+.services__item { display: flex; flex-direction: column; justify-content: space-between; flex: 0 1 25%; padding: 0 15px 15px 15px; }
+
+@media (max-width: 800px) { .services__item { flex: 0 0 50%; padding: 0 7px 7px 7px; } }
+
+@media (max-width: 450px) { .services__item { flex: 1 1 40%; padding: 0 7px 7px 7px; } }
+
+.services__item:nth-child(3) img { width: 75%; }
+
+@media (max-width: 390px) { .services__item:nth-child(3) img { width: 100%; } }
+
+.services__image-block { text-align: center; }
+
+.services__image-block a { display: inline-block; /* height: 100%; width: 100%; */ max-height: 190px; overflow: hidden; }
+
+.services__image-block a img { height: 100%; width: 100%; object-fit: contain; }
+
+.services__button-block { display: flex; justify-content: center; margin: 15px auto 20px auto; }
+
+.services__button-block a { display: flex; justify-content: center; border: 2px solid #383844; padding: 0 10px; font-weight: bold; color: #333333; transition: all 0.2s linear; }
+
+.services__button-block a span { padding: 10px 0 10px 0; text-align: center; }
+
+.services__button-block a:hover { background: #383844; }
+
+.services__button-block a:hover span { color: #f5cb55; }
