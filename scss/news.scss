@@ -61,6 +61,9 @@
     font-size: 16px;
     padding: 0 0 0 5pt;
     height: 100%;
+    @media (max-width: 576px) {
+        height: unset;
+    }
 }
 
 .news-item__button {
