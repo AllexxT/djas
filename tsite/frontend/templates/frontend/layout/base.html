@@ -33,6 +33,42 @@
   <link rel="manifest" href="{% static 'icons/manifest.json' %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="{% static 'icons/ms-icon-144x144.png' %}">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ТРОТУАР БУД",
+      "image": "https://trotuar-bud.zp.ua/static/images/trotuarnaya-plitka-trotuar-bud.jpeg",
+      "telephone": "+38 (063) 808-60-01 +38 (067) 527-31-00 +38 (093) 392-99-77",
+      "url": "https://trotuar-bud.zp.ua",
+      "email": "trotuar-bud@ukr.net",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "г. Запорожье ул. Космическая 119",
+        "addressLocality": "Запорожье",
+        "addressRegion": "Запорожская область",
+        "postalCode": "69061",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.7888663,
+        "longitude": 35.2188607
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "opens": "8:00",
+        "closes": "16:00",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ]
+      }
+    }
+  </script>
   {% block ldJson %}
   <script type="application/ld+json">
     {
@@ -41,47 +77,15 @@
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "ТОВАРЫ"
+        "name": "ТОВАРЫ",
+        "item": "https://trotuar-bud.zp.ua/"
       }]
     }
   </script>
   {% endblock ldJson %}
-  {% comment %} <style type="text/css">
-    #hellopreloader_preload {
-      display: block;
-      position: fixed;
-      z-index: 99999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      /* min-width: 1000px; */
-      background: rgba(56, 56, 68, 1) url(http://hello-site.ru//main/images/preloads/spinning-circles.svg) center center no-repeat;
-      background-size: 41px;
-    }
-  </style> {% endcomment %}
 </head>
 
 <body>
-  {% comment %} <div id="hellopreloader">
-    <div id="hellopreloader_preload"></div>
-  </div>
-  <script>
-    var hellopreloader = document.getElementById("hellopreloader_preload");
-
-    function fadeOutnojquery(e) {
-      e.style.opacity = 1;
-      var o = setInterval(function () {
-        e.style.opacity = e.style.opacity - .05, e.style.opacity <= .05 && (clearInterval(o), hellopreloader.style
-          .display = "none")
-      }, 16)
-    }
-    window.onload = function () {
-      setTimeout(function () {
-        fadeOutnojquery(hellopreloader)
-      }, 200)
-    };
-  </script> {% endcomment %}
   <div class="mobile-nav">
     <div class="mobile-nav__content">
       <ul class="mobile-nav__list">
@@ -272,9 +276,7 @@
       <div class="footer-container">
         <div class="footer__row">
           <div class="footer__map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2680.617224102586!2d35.21667201519381!3d47.78886988336274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc5f8a8feee63d%3A0x94149ec834ee90a4!2z0KLQntCSICLQotCg0J7QotCj0JDQoCDQkdCj0JQi!5e0!3m2!1sru!2sua!4v1593539497973!5m2!1sru!2sua"
-              style='border: 0px;'></iframe>
+
           </div>
           <div class="footer__text-row">
             <div class="footer__menu">
@@ -336,6 +338,15 @@
       mobMenu.className = 'mobile-nav'
       siteSection.className = 'site-section'
     }
+  </script>
+  <script>
+    let map = document.getElementsByClassName('footer__map')[0]
+    ifrm = document.createElement("iframe");
+    ifrm.setAttribute("src",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2680.617224102586!2d35.21667201519381!3d47.78886988336274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc5f8a8feee63d%3A0x94149ec834ee90a4!2z0KLQntCSICLQotCg0J7QotCj0JDQoCDQkdCj0JQi!5e0!3m2!1sru!2sua!4v1593539497973!5m2!1sru!2sua"
+    );
+    ifrm.style.border = "0px";
+    setTimeout(()=>map.appendChild(ifrm), 3000)
   </script>
 </body>
 

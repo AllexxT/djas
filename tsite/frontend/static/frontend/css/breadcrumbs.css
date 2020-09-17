@@ -1,1 +1,15 @@
-.breadcrumbs{margin-top:5pt;filter:drop-shadow(0 3px 5px #484752)}.breadcrumbs__item{display:inline-block;height:30px;line-height:30px;margin:0px -2px 0 0;text-indent:19px;position:relative}.breadcrumbs__item:before{content:" ";height:0;width:0;position:absolute;left:0px;border-style:solid;border-width:15px 0 15px 15px;border-color:transparent transparent transparent #484752;z-index:0}.breadcrumbs__item:first-child:before{border-color:transparent;display:none}.breadcrumbs__item a:after{content:" ";height:0;width:0;position:absolute;right:-15px;border-style:solid;border-width:15px 0 15px 15px;border-color:transparent transparent transparent #ccc;z-index:10}.breadcrumbs__item a{text-transform:uppercase;display:block;background:#ccc;color:black;font-size:10pt;font-weight:bold;-webkit-tap-highlight-color:rgba(255,255,255,0)}.breadcrumbs__item a:hover{background:#ddd}.breadcrumbs__item a:hover::after{border-color:transparent transparent transparent #ddd}
+.breadcrumbs { margin-top: 5pt; filter: drop-shadow(0 3px 5px #484752); }
+
+.breadcrumbs__item { display: inline-block; height: 30px; line-height: 30px; /* width: 100px; */ margin: 0px -2px 0 0; text-indent: 19px; position: relative; }
+
+.breadcrumbs__item:before { content: " "; height: 0; width: 0; position: absolute; left: 0px; border-style: solid; border-width: 15px 0 15px 15px; border-color: transparent transparent transparent #484752; z-index: 0; }
+
+.breadcrumbs__item:first-child:before { border-color: transparent; display: none; }
+
+.breadcrumbs__item a:after { content: " "; height: 0; width: 0; position: absolute; right: -15px; border-style: solid; border-width: 15px 0 15px 15px; border-color: transparent transparent transparent #ccc; z-index: 10; }
+
+.breadcrumbs__item a { text-transform: uppercase; display: block; background: #ccc; color: black; font-size: 10pt; font-weight: bold; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+.breadcrumbs__item a:hover { background: #dddddd; }
+
+.breadcrumbs__item a:hover::after { border-color: transparent transparent transparent #dddddd; }

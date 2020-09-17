@@ -196,7 +196,7 @@ class Photos(models.Model):
         ProductCard, on_delete=models.CASCADE, null=True
     )
     photo = VersatileImageField(
-        verbose_name='Photo', ppoi_field='ppoi', blank=True
+        verbose_name='Photo', ppoi_field='ppoi', blank=False
     )
     ppoi = PPOIField()
 ##############################################################################

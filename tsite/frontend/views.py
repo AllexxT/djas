@@ -1,7 +1,8 @@
+import json
+import pprint
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-import pprint
 
 from products.models import (
     Page, News, Sertificat, ServicePage, ProductCard,
@@ -9,6 +10,45 @@ from products.models import (
 )
 
 pp = pprint.PrettyPrinter(width=80, compact=True)
+
+
+def ldJson(cards):
+    ldJsonProducts = []
+
+    for card in cards:
+        price = 0
+        if card.lowerPriceNoTable:
+            price = card.lowerPriceNoTable
+        elif len(card.prices) > 0:
+            price = card.prices[0].lowerPrice
+        # if type(price) != str:
+        #     price = ('%f' % price).rstrip('0').rstrip('.')
+
+        photo = None
+        if len(card.photos) > 0:
+            photo = "https://trotuar-bud.zp.ua"+card.photos[0].photo.url
+        ldJsonProducts.append(
+            {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "name": card.name,
+                # "description": card.description[0:150]+"...",
+                "image": photo,
+                "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+card.slug,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Тротуар-Буд"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": float("%.2f" % price),
+                    "priceCurrency": "UAH",
+                    "availability": "http://schema.org/InStock",
+                    "condition": "new"
+                }
+            }
+        )
+    return json.dumps(ldJsonProducts)
 
 
 def index(request):
@@ -23,10 +63,12 @@ def sett(request):
     cards = ProductCard.objects.filter(article__page='sett'
                                        ).prefetch_related(
     ).prefetch_related('article')
+
     vibropressed = cards.filter(article__article="vibropressed")
     vibrocast = cards.filter(article__article="vibrocast")
     gully = cards.filter(article__article="gully")
     borders = cards.filter(article__article="borders")
+
     return render(
         request,
         'frontend/products/sett.html',
@@ -36,6 +78,7 @@ def sett(request):
             "vibrocast": vibrocast,
             "gully": gully,
             "borders": borders,
+            "ldJsonProducts": ldJson(cards)
         }
     )
 
@@ -57,6 +100,7 @@ def fence(request):
             "ordinary": ordinary,
             "glossy": glossy,
             "columns": columns,
+            "ldJsonProducts": ldJson(cards)
         }
     )
 
@@ -80,6 +124,7 @@ def brick(request):
             'baseblock': baseblock,
             'buildblock': buildblock,
             'facbrick': facbrick,
+            "ldJsonProducts": ldJson(cards)
         }
     )
 
@@ -98,7 +143,8 @@ def parapet(request):
         {
             'seo': pageHead,
             'cap': cap,
-            'parapet': parapet
+            'parapet': parapet,
+            "ldJsonProducts": ldJson(cards)
         }
     )
 
@@ -122,16 +168,51 @@ def monuments(request):
             'capital': capital,
             'nameplate': nameplate,
             'coverplate': coverplate,
+            "ldJsonProducts": ldJson(cards)
         }
     )
 
 
 def productPage(request, slug):
     product = ProductCard.objects.get(slug=slug)
+    
+    price = 0
+    if product.lowerPriceNoTable:
+        price = product.lowerPriceNoTable
+    elif len(product.prices) > 0:
+        price = product.prices[0].lowerPrice
+    # if type(price) != str:
+    #     price = ('%f' % price).rstrip('0').rstrip('.')
+
+    photo = None
+    if len(product.photos) > 0:
+        photo = "https://trotuar-bud.zp.ua"+product.photos[0].photo.url
+    ldJson = {
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "name": product.name,
+        # "description": product.description[0:150]+"...",
+        "image": photo,
+        "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+product.slug,
+        "brand": {
+                    "@type": "Brand",
+                    "name": "Тротуар-Буд"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": float("%.2f" % price),
+            "priceCurrency": "UAH",
+            "availability": "http://schema.org/InStock",
+            "condition": "new"
+        }
+    }
     return render(
         request,
         'frontend/products/productPage.html',
-        {"product": product}
+        {
+            "product": product,
+            "ldJsonProducts": json.dumps(ldJson)
+        }
     )
 
 

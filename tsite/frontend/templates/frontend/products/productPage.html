@@ -9,8 +9,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/gallery.css' %}">
 <meta name="description" content="{{ product.seoDescription }}">
 <meta name="keywords" content="{{ product.keywords }}">
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 {% endblock meta %}
 {% block ldJson %}
 <script type="application/ld+json">
@@ -32,7 +32,8 @@
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "{{product.name}}"
+                "name": "{{product.name}}",
+                "item": "https://trotuar-bud.zp.ua{{ request.get_full_path }}"
             }
         ]
     }
@@ -44,6 +45,7 @@
 {% include 'frontend/includes/breadcrumbsPage.html' %}
 {% endblock breadcrumbs %}
 {% block content %}
+<script type="application/ld+json">{{ ldJsonProducts|safe }}</script>
 <div class="pp">
     <div class="g-row">
         <div class="gallery">
@@ -61,7 +63,7 @@
                         <h1>{{ product.name }}</h1>
                     </div>
                 </div>
-                <div class="sizes">{{ product.sizes }}</div>
+                <div class="sizes">{{ product.sizes|safe }}</div>
                 {% if product.article.article == "vibropressed" %}
                 <div class="table">
                     <div class="table__press"></div>
