@@ -3,6 +3,7 @@ import pprint
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import get_object_or_404
 
 from products.models import (
     Page, News, Sertificat, ServicePage, ProductCard,
@@ -174,7 +175,7 @@ def monuments(request):
 
 
 def productPage(request, slug):
-    product = ProductCard.objects.get(slug=slug)
+    product = get_object_or_404(ProductCard, slug=slug)
     
     price = 0
     if product.lowerPriceNoTable:
