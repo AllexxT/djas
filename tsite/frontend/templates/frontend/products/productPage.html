@@ -2,7 +2,12 @@
 {% comment %} HEAD {% endcomment %}
 {% load static %}
 
-<title>{% block title %}Купить {{ product.name }} в Запорожье выгодная Цена - Тротуар Буд{% endblock title %}</title>
+<title>{% block title %}
+{% if product.seoTitle %}{{ product.seoTitle }}
+{% else %}
+Купить {{ product.name }} в Запорожье выгодная Цена - Тротуар Буд
+{% endif %}
+{% endblock title %}</title>
 
 {% block meta %}
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/productPage.css' %}">

@@ -30,6 +30,7 @@ class ProductCardAdmin(admin.ModelAdmin):
         'sertificate',
         'sizes',
         'description',
+        'seoTitle',
         'seoDescription',
         'keywords',
     )

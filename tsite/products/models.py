@@ -84,6 +84,11 @@ class ProductCard(models.Model):
                           blank=True, config_name='mini')
     position = models.FloatField(
         'Позиция товара в списке товаров', blank=True, null=True, default=0)
+    seoTitle = models.CharField(
+        "СЕО  ЗАГОЛОВОК. Если оставить пустым, \
+            то на сайте он будет в виде - \
+                \"Купить {Название товара} в Запорожье выгодная Цена - Тротуар Буд\"",
+                max_length=200, null=True, blank=True)
     seoDescription = models.TextField(
         'СЕО описание страницы с товаром(скрытое)', null=True, blank=True)
     keywords = models.TextField('СЕО ключевые слова', null=True, blank=True)
