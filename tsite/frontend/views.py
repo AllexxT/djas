@@ -45,6 +45,9 @@ def ldJson(cards):
     priceValidUntil = datetime.now()+timedelta(days=30)
 
     for card in cards:
+        description = '...'
+        if card.seoDescription:
+            description = card.seoDescription[0:150]+"..."
         price = 0
         if card.lowerPriceNoTable:
             price = card.lowerPriceNoTable
@@ -59,7 +62,7 @@ def ldJson(cards):
                 "@context": "http://schema.org",
                 "@type": "Product",
                 "name": card.name,
-                "description": card.seoDescription[0:150]+"...",
+                "description": description,
                 "image": photo,
                 "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+card.slug,
                 "brand": {
@@ -205,6 +208,9 @@ def monuments(request):
 def productPage(request, slug):
     product = get_object_or_404(ProductCard, slug=slug)
     
+    description = '...'
+    if product.seoDescription:
+        description = product.seoDescription[0:150]+"..."
     priceValidUntil = datetime.now()+timedelta(days=30)
     price = 0
     if product.lowerPriceNoTable:
@@ -221,7 +227,7 @@ def productPage(request, slug):
         "@context": "http://schema.org",
         "@type": "Product",
         "name": product.name,
-        "description": product.seoDescription[0:150]+"...",
+        "description": description,
         "image": photo,
         "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+product.slug,
         "brand": {
