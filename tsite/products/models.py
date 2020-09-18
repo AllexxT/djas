@@ -88,6 +88,9 @@ class ProductCard(models.Model):
         'СЕО описание страницы с товаром(скрытое)', null=True, blank=True)
     keywords = models.TextField('СЕО ключевые слова', null=True, blank=True)
 
+    def get_absolute_url(self):
+        return f'{reverse(self.article.page.page)}{self.slug}'
+
 # UUSLUG
     slug = models.CharField(max_length=200, null=True)
 

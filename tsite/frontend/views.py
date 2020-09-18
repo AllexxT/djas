@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import get_object_or_404
+from django.contrib.sitemaps import Sitemap
+from django.urls import reverse
 
 from products.models import (
     Page, News, Sertificat, ServicePage, ProductCard,
@@ -11,6 +13,29 @@ from products.models import (
 )
 
 pp = pprint.PrettyPrinter(width=80, compact=True)
+
+
+class ProductsSitemap(Sitemap):
+    changefreq = "weekly"
+    priority = 0.7
+
+    def items(self):
+        return ProductCard.objects.all()
+
+
+class StaticSitemap(Sitemap):
+    priority = 0.6
+    changefreq = "weekly"
+
+    def items(self):
+        return [
+            'index', 'sett', 'fence', 'brick', 'parapet', 'monuments',
+            'news', 'uslugi', 'ukladka-plitki', 'ustanovka-pamyatnikov',
+            'ustanovka-evrozabora', 'dostavka', 'zamer',
+            'sertificates', 'our_works',
+        ]
+    def location(self, item):
+        return reverse(item)
 
 
 def ldJson(cards):
@@ -22,8 +47,6 @@ def ldJson(cards):
             price = card.lowerPriceNoTable
         elif len(card.prices) > 0:
             price = card.prices[0].lowerPrice
-        # if type(price) != str:
-        #     price = ('%f' % price).rstrip('0').rstrip('.')
 
         photo = None
         if len(card.photos) > 0:
@@ -176,7 +199,7 @@ def monuments(request):
 
 def productPage(request, slug):
     product = get_object_or_404(ProductCard, slug=slug)
-    
+
     price = 0
     if product.lowerPriceNoTable:
         price = product.lowerPriceNoTable

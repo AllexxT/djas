@@ -1,6 +1,13 @@
 from django.urls import path, re_path
 from django.views.generic.base import RedirectView
 from . import views
+from django.contrib.sitemaps.views import sitemap
+
+
+sitemaps = {
+    'products': views.ProductsSitemap,
+    'static': views.StaticSitemap,
+}
 
 
 urlpatterns = [
@@ -42,6 +49,12 @@ urlpatterns = [
     # !
     path('sertifikaty/', views.sertificates, name='sertificates'),
     path('nashi-raboty/', views.our_works, name='our_works'),
-    # path('trotuarnaya-plitka-zaporozhe/', views.news, name='sett'),
-    # path('evrozabory-zaporozhe/', views.news, name='fence'),
+
+    # Sitemap
+    path(
+        'sitemap.xml',
+        sitemap,
+        {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'
+    ),
 ]

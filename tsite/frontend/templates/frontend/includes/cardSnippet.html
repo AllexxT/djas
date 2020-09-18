@@ -29,9 +29,9 @@
     </div>
     <div class="card__current-price">
         {% if card.lowerPriceNoTable %}
-        <p>от {{card.lowerPriceNoTable|floatformat}} грн</p>
+        <p>от {{card.lowerPriceNoTable|floatformat:'-2'}} грн</p>
         {% elif card.prices.0.lowerPrice %}
-        <p>от {{card.prices.0.lowerPrice|floatformat}} грн</p>
+        <p>от {{card.prices.0.lowerPrice|floatformat:'-2'}} грн</p>
         {% else %}
         <span style="color: #535353;">Нет информации</span>
         {% endif %}
