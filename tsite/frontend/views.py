@@ -6,6 +6,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
+from datetime import datetime, timedelta
 
 from products.models import (
     Page, News, Sertificat, ServicePage, ProductCard,
@@ -40,6 +41,8 @@ class StaticSitemap(Sitemap):
 
 def ldJson(cards):
     ldJsonProducts = []
+    
+    priceValidUntil = datetime.now()+timedelta(days=30)
 
     for card in cards:
         price = 0
@@ -56,7 +59,7 @@ def ldJson(cards):
                 "@context": "http://schema.org",
                 "@type": "Product",
                 "name": card.name,
-                # "description": card.description[0:150]+"...",
+                "description": card.seoDescription[0:150]+"...",
                 "image": photo,
                 "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+card.slug,
                 "brand": {
@@ -65,7 +68,9 @@ def ldJson(cards):
                 },
                 "offers": {
                     "@type": "Offer",
+                    "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+card.slug,
                     "price": float("%.2f" % price),
+                    "priceValidUntil": priceValidUntil.strftime('%Y-%m-%d'),
                     "priceCurrency": "UAH",
                     "availability": "http://schema.org/InStock",
                     "condition": "new"
@@ -199,7 +204,8 @@ def monuments(request):
 
 def productPage(request, slug):
     product = get_object_or_404(ProductCard, slug=slug)
-
+    
+    priceValidUntil = datetime.now()+timedelta(days=30)
     price = 0
     if product.lowerPriceNoTable:
         price = product.lowerPriceNoTable
@@ -215,7 +221,7 @@ def productPage(request, slug):
         "@context": "http://schema.org",
         "@type": "Product",
         "name": product.name,
-        # "description": product.description[0:150]+"...",
+        "description": product.seoDescription[0:150]+"...",
         "image": photo,
         "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+product.slug,
         "brand": {
@@ -225,6 +231,7 @@ def productPage(request, slug):
         "offers": {
             "@type": "Offer",
             "price": float("%.2f" % price),
+            "priceValidUntil": priceValidUntil.strftime('%Y-%m-%d'),
             "priceCurrency": "UAH",
             "availability": "http://schema.org/InStock",
             "condition": "new"
