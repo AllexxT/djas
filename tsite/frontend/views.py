@@ -75,8 +75,7 @@ def ldJson(cards):
                     "price": float("%.2f" % price),
                     "priceValidUntil": priceValidUntil.strftime('%Y-%m-%d'),
                     "priceCurrency": "UAH",
-                    "availability": "http://schema.org/InStock",
-                    "condition": "new"
+                    "availability": "http://schema.org/InStock"
                 }
             }
         )
@@ -239,8 +238,7 @@ def productPage(request, slug):
             "price": float("%.2f" % price),
             "priceValidUntil": priceValidUntil.strftime('%Y-%m-%d'),
             "priceCurrency": "UAH",
-            "availability": "http://schema.org/InStock",
-            "condition": "new"
+            "availability": "http://schema.org/InStock"
         }
     }
     return render(
