@@ -54,6 +54,7 @@
 <div class="pp">
     <div class="g-row">
         <div class="gallery">
+            {% if  product.photos %}
             <div class="gallery__frame">
                 <div class="gallery__main-frame">
                     <div class="gallery__row">
@@ -61,6 +62,8 @@
                         <div id="gallery"></div>
                     </div>
                 </div>
+            {% include "frontend/includes/gallery_ProdPage_MIN.html" %}
+            {% endif %}
             </div>
             <div class="table-wrapper">
                 <div class="title">
@@ -136,7 +139,6 @@
     </div>
     <div class="pp__description">{{ product.description | safe }}</div>
 </div>
-{% include "frontend/includes/gallery_ProdPage_MIN.html" %}
 
 
 {% endblock content %}

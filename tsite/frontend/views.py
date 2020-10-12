@@ -216,8 +216,6 @@ def productPage(request, slug):
         price = product.lowerPriceNoTable
     elif len(product.prices) > 0:
         price = product.prices[0].lowerPrice
-    # if type(price) != str:
-    #     price = ('%f' % price).rstrip('0').rstrip('.')
 
     photo = None
     if len(product.photos) > 0:
