@@ -18,13 +18,23 @@ body {
     display: flex;
     flex-flow: column;
 }
+.site-section {
+    transition: all 0.15s linear;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.site-section_mobile-nav {
+    transform: translate3d(240px, 0, 0);
+}
 header {
     background-color: rgba(56, 56, 68, 0.9);
     box-shadow: 0px 5px 10px gray;
     margin-bottom: 10px;
 }
-.navigation-block {
-    flex: 1 1 75vh; /* 100vh alternative for fix android chrome bug  */
+.site-block {
+    flex: 1 1 auto; /* 100vh alternative for fix android chrome bug  */
 }
 
 .content {
