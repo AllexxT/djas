@@ -2,6 +2,7 @@ aside.menu {
     padding: 15px 0 0 0;
     flex-basis: 640px;
     max-width: 150px;
+    z-index: 1;
     @media (max-width: 900px) {
         display: none;
     }
@@ -12,6 +13,8 @@ aside.menu {
     height: 100%;
     ol {
         list-style: none;
+        position: sticky;
+        top: 0;
     }
 }
 .navigation-link {
