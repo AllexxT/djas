@@ -38,7 +38,6 @@
 {% endblock breadcrumbs %}
 {% block content %}
 <script type="application/ld+json">{{ ldJsonProducts|safe }}</script>
-<div class="go-up">Вверх</div>
 <div class="anch-menu">
     <span>Тип</span>
     <ol class="anch-menu__list">
@@ -90,13 +89,5 @@
 
 {% comment %} PAGE DESCRIPTION {{seo}} {% endcomment %}
 {% include 'frontend/includes/pageDescription.html' %}
-<script>
-    document.getElementsByClassName('go-up')[0].onclick = () => {
-        window.scroll({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        })
-    }
-</script>
+
 {% endblock content %}

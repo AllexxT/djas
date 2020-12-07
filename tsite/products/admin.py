@@ -80,9 +80,11 @@ class PageAdmin(admin.ModelAdmin):
         'page',
         'readableTitle',
         'title',
-        'description',
+        # 'description',
+        'description_escaped_trunc',
         'keywordsLength',
-        'body',
+        # 'body',
+        'body_escaped_trunc',
     )
 
 

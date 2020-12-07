@@ -7,6 +7,9 @@ from datetime import date
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 
+from django.template.defaultfilters import truncatechars
+from django.utils.html import strip_tags
+
 ##############################################################################
 
 
@@ -31,6 +34,15 @@ class Page(models.Model):
         "СЕО Ключевые слова", blank=True, null=True)
     body = RichTextField(
         "Текст на странице", blank=True, null=True)
+    
+    def body_escaped_trunc(self):
+        return truncatechars(strip_tags(self.body), 150)
+    body_escaped_trunc.short_description = 'Текст на странице'
+
+    def description_escaped_trunc(self):
+        return truncatechars(self.description, 150)
+    description_escaped_trunc.short_description = 'CEO Описание(скрытое)'
+    
 
     def keywordsLength(self):
         if len(self.keywords.split(',')) <= 1:
