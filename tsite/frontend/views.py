@@ -53,7 +53,6 @@ def ldJson(cards):
             price = card.lowerPriceNoTable
         elif len(card.prices) > 0:
             price = card.prices[0].lowerPrice
-
         photo = None
         if len(card.photos) > 0:
             photo = "https://trotuar-bud.zp.ua"+card.photos[0].photo.url
@@ -72,7 +71,7 @@ def ldJson(cards):
                 "offers": {
                     "@type": "Offer",
                     "url": "https://trotuar-bud.zp.ua/trotuarnaya-plitka-bordyur-zaporozhe/"+card.slug,
-                    "price": float("%.2f" % price),
+                    "price": price,
                     "priceValidUntil": priceValidUntil.strftime('%Y-%m-%d'),
                     "priceCurrency": "UAH",
                     "availability": "http://schema.org/InStock"
@@ -233,7 +232,7 @@ def productPage(request, slug):
         },
         "offers": {
             "@type": "Offer",
-            "price": float("%.2f" % price),
+            "price": price,
             "priceValidUntil": priceValidUntil.strftime('%Y-%m-%d'),
             "priceCurrency": "UAH",
             "availability": "http://schema.org/InStock"
