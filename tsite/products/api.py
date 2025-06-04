@@ -13,7 +13,7 @@ from .serializer import (
 
 
 class PageViewSet(viewsets.ModelViewSet):
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
@@ -30,7 +30,7 @@ class PageViewSet(viewsets.ModelViewSet):
 
 class SertificatViewSet(viewsets.ModelViewSet):
     queryset = Sertificat.objects.all()
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
@@ -40,7 +40,7 @@ class SertificatViewSet(viewsets.ModelViewSet):
 
 class ServicePageViewSet(viewsets.ModelViewSet):
     queryset = ServicePage.objects.all()
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
@@ -61,7 +61,7 @@ class ServicePageViewSet(viewsets.ModelViewSet):
 class ProductCardsViewSet(viewsets.ModelViewSet):
     # queryset = ProductCard.objects.select_related().select_related('article')
     # queryset = ProductCard.objects.all().prefetch_related('article')
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
@@ -86,7 +86,7 @@ class ProductCardsViewSet(viewsets.ModelViewSet):
 
 
 class ProductCardViewSet(viewsets.ModelViewSet):
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
@@ -112,7 +112,7 @@ class ProductCardViewSet(viewsets.ModelViewSet):
 
 class NewsViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
@@ -125,7 +125,7 @@ class NewsViewSet(viewsets.ModelViewSet):
 
 class ExpositionViewSet(viewsets.ModelViewSet):
     queryset = Exposition.objects.all()
-    permissions_classes = [
+    permission_classes = [
         permissions.AllowAny
     ]
 
